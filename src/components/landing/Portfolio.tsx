@@ -19,8 +19,9 @@ const projects = [
     description: "International non-profit platform empowering students to explore AI, robotics, and software development. Features event management, learning resources, mentorship matching, and a global community hub.",
     category: "Non-Profit Platform",
     metrics: [
-      { label: "Students Reached", value: "50K+" },
-      { label: "Countries", value: "32" },
+      { label: "Countries", value: "3+" },
+      { label: "Volunteers", value: "30+" },
+      { label: "Visibility", value: "+70%" },
     ],
     cardBg: "bg-[hsl(180,15%,18%)]",
     accentBorder: "border-l-teal-500",
