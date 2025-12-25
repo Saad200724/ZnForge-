@@ -6,12 +6,11 @@ const projects = [
     description: "A complete e-commerce platform redesign for a premium pet supplies retailer. We built a seamless shopping experience with AI-powered product recommendations and subscription management for recurring orders.",
     category: "E-Commerce Platform",
     metrics: [
-      { label: "Conversion Rate", value: "340%" },
-      { label: "Revenue Growth", value: "85%" },
+      { label: "Conversion Rate", value: "+340%" },
+      { label: "Revenue Growth", value: "+85%" },
     ],
-    bgColor: "bg-[hsl(35,90%,94%)]",
-    darkBgColor: "dark:bg-[hsl(35,40%,18%)]",
-    accentColor: "text-[hsl(35,90%,45%)]",
+    cardBg: "bg-[hsl(40,20%,20%)]",
+    accentBorder: "border-l-amber-500",
   },
   {
     title: "Oxygen Robotics",
@@ -19,24 +18,21 @@ const projects = [
     category: "SaaS Platform",
     metrics: [
       { label: "User Engagement", value: "92%" },
-      { label: "Operational Efficiency", value: "67%" },
+      { label: "Efficiency", value: "+67%" },
     ],
-    bgColor: "bg-[hsl(200,80%,95%)]",
-    darkBgColor: "dark:bg-[hsl(200,40%,18%)]",
-    accentColor: "text-[hsl(200,80%,45%)]",
+    cardBg: "bg-[hsl(180,15%,18%)]",
+    accentBorder: "border-l-teal-500",
   },
   {
     title: "SciVenture",
     description: "Educational technology platform connecting students with hands-on science experiments. Interactive learning modules, progress tracking, and gamification elements to boost engagement.",
     category: "EdTech Application",
-    subInfo: "Featured on Product Hunt",
     metrics: [
-      { label: "Student Retention", value: "78%" },
-      { label: "Course Completion", value: "94%" },
+      { label: "Retention", value: "78%" },
+      { label: "Completion", value: "94%" },
     ],
-    bgColor: "bg-[hsl(150,70%,92%)]",
-    darkBgColor: "dark:bg-[hsl(150,40%,18%)]",
-    accentColor: "text-[hsl(150,70%,35%)]",
+    cardBg: "bg-[hsl(160,20%,16%)]",
+    accentBorder: "border-l-emerald-500",
   },
 ];
 
@@ -51,9 +47,9 @@ export function Portfolio() {
               Featured Work
             </span>
             <h2 className="font-display text-display-sm sm:text-display-md font-semibold text-foreground">
-              Powering Growth Across Every
+              Real Results From
               <br />
-              <span className="text-gradient">Frontier</span>
+              <span className="text-gradient">Real Projects</span>
             </h2>
           </div>
           <a
@@ -70,13 +66,13 @@ export function Portfolio() {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className={`group relative rounded-2xl lg:rounded-3xl overflow-hidden ${project.bgColor} ${project.darkBgColor} p-6 lg:p-10 transition-all duration-300 hover:scale-[1.01] cursor-pointer`}
+              className={`group relative rounded-2xl overflow-hidden ${project.cardBg} border border-border/30 transition-all duration-300 hover:border-border/60 cursor-pointer`}
             >
-              <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <div className="grid lg:grid-cols-2 gap-0">
                 {/* Content */}
-                <div className={`order-2 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
-                  <span className={`inline-flex items-center gap-2 text-xs font-medium uppercase tracking-wider mb-4 ${project.accentColor}`}>
-                    <span className="w-1.5 h-1.5 rounded-full bg-current" />
+                <div className={`p-8 lg:p-10 flex flex-col justify-center ${index % 2 === 0 ? 'order-1' : 'order-1 lg:order-2'}`}>
+                  <span className="inline-flex items-center gap-2 text-xs font-medium text-primary uppercase tracking-wider mb-4">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                     {project.category}
                   </span>
                   
@@ -84,19 +80,15 @@ export function Portfolio() {
                     {project.title}
                   </h3>
                   
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-lg">
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-8 max-w-md">
                     {project.description}
                   </p>
 
-                  {project.subInfo && (
-                    <p className="text-xs text-muted-foreground mb-4">{project.subInfo}</p>
-                  )}
-
                   {/* Metrics */}
-                  <div className="flex flex-wrap gap-6">
+                  <div className="flex flex-wrap gap-8">
                     {project.metrics.map((metric) => (
                       <div key={metric.label}>
-                        <div className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-1">
+                        <div className="font-display text-2xl lg:text-3xl font-semibold text-foreground mb-1">
                           {metric.value}
                         </div>
                         <div className="text-xs text-muted-foreground uppercase tracking-wide">
@@ -107,17 +99,20 @@ export function Portfolio() {
                   </div>
                 </div>
 
-                {/* Image Placeholder */}
-                <div className={`order-1 ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
-                  <div className="relative aspect-[4/3] rounded-xl lg:rounded-2xl overflow-hidden bg-background/80 border border-border/20 shadow-2xl group-hover:shadow-3xl transition-shadow">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center">
-                        <span className="text-2xl font-display font-bold text-primary">Z</span>
-                      </div>
+                {/* Image Area */}
+                <div className={`relative ${index % 2 === 0 ? 'order-2' : 'order-2 lg:order-1'}`}>
+                  <div className="aspect-[4/3] lg:aspect-auto lg:h-full bg-gradient-to-br from-background/20 to-background/5 flex items-center justify-center relative overflow-hidden">
+                    {/* Placeholder Logo */}
+                    <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center z-10">
+                      <span className="text-2xl font-display font-bold text-primary">Z</span>
                     </div>
+                    
+                    {/* Subtle gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent" />
+                    
                     {/* Hover Arrow */}
-                    <div className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-foreground flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      <ArrowUpRight className="w-4 h-4 text-background" />
+                    <div className="absolute bottom-6 right-6 w-10 h-10 rounded-full bg-foreground/10 border border-foreground/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:bg-foreground group-hover:border-foreground">
+                      <ArrowUpRight className="w-4 h-4 text-foreground group-hover:text-background transition-colors" />
                     </div>
                   </div>
                 </div>
