@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
+import znforgeLogo from "@/assets/znforge-logo.png";
 const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Work", href: "#work" },
@@ -32,13 +32,12 @@ export function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center transition-transform group-hover:scale-105">
-              <span className="text-primary-foreground font-bold text-lg">Z</span>
-            </div>
-            <span className="font-display font-semibold text-lg text-foreground tracking-tight">
-              ZnForge
-            </span>
+          <a href="#" className="flex items-center group">
+            <img 
+              src={znforgeLogo} 
+              alt="ZnForge" 
+              className="h-8 w-auto transition-transform group-hover:scale-105"
+            />
           </a>
 
           {/* Desktop Navigation */}
