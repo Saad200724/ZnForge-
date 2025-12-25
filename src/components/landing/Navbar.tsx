@@ -23,9 +23,9 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 p-4">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-2xl mx-auto">
         {/* Floating Container */}
-        <div className={`flex items-center justify-between px-4 lg:px-6 py-3 rounded-full transition-all duration-500 ${
+        <div className={`flex items-center justify-between px-3 lg:px-4 py-2 rounded-full transition-all duration-500 ${
           scrolled 
             ? "bg-background/95 backdrop-blur-xl shadow-lg shadow-black/5 border border-border/50" 
             : "bg-background/80 backdrop-blur-md shadow-md shadow-black/5 border border-border/30"
@@ -35,7 +35,7 @@ export function Navbar() {
             <img 
               src={znforgeLogo} 
               alt="ZnForge" 
-              className="h-7 w-auto transition-transform group-hover:scale-105"
+              className="h-6 w-auto transition-transform group-hover:scale-105"
             />
           </a>
 
@@ -45,12 +45,12 @@ export function Navbar() {
               <div key={link.label} className="flex items-center">
                 <a
                   href={link.href}
-                  className="px-4 py-1.5 text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+                  className="px-3 py-1 text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
                 >
                   {link.label}
                 </a>
                 {index < navLinks.length - 1 && (
-                  <div className="w-px h-4 bg-border/60" />
+                  <div className="w-px h-3.5 bg-border/60" />
                 )}
               </div>
             ))}
@@ -58,9 +58,9 @@ export function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center">
-            <Button className="bg-foreground text-background hover:bg-foreground/90 font-medium px-5 h-9 rounded-full text-sm group">
+            <Button className="bg-emerald-500 hover:bg-emerald-600 text-white font-medium px-4 h-8 rounded-full text-sm group">
               Get Started
-              <ArrowRight className="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-0.5 transition-transform" />
+              <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-0.5 transition-transform" />
             </Button>
           </div>
 
@@ -89,7 +89,7 @@ export function Navbar() {
                 </a>
               ))}
               <div className="pt-3 mt-2 border-t border-border/50">
-                <Button className="w-full bg-foreground text-background hover:bg-foreground/90 font-medium rounded-full">
+                <Button className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-medium rounded-full">
                   Get Started
                   <ArrowRight className="w-4 h-4 ml-1" />
                 </Button>
