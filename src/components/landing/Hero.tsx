@@ -23,9 +23,9 @@ export function Hero() {
 
           {/* Main Headline - Clean, powerful */}
           <h1 className="font-display text-display-md sm:text-display-lg lg:text-display-xl font-semibold text-foreground mb-6 animate-in delay-2">
-            Design & development
+            Build Your Own Software,
             <br />
-            <span className="text-gradient">for ambitious teams</span>
+            <span className="text-gradient">Even If You Don't Have A Development Team</span>
           </h1>
 
           {/* Subheadline - Clear value prop */}

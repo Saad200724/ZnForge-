@@ -1,38 +1,59 @@
-import { ArrowUpRight, TrendingUp } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
-    title: "FinTech Dashboard",
-    category: "UI/UX Design",
-    metric: "+340%",
-    metricLabel: "User engagement",
+    title: "Building A Specialized Vertical Market For DoubtMind.",
+    description: "As the design lead for this project, I led all the design initiatives and regularly worked with a cross-functional team across stakeholders, designers, and the development team using JIRA.",
+    category: "Project Editorial",
+    metrics: [
+      { label: "Research", value: "86%" },
+      { label: "Design", value: "70%" },
+    ],
+    bgColor: "bg-[hsl(270,80%,95%)]",
+    darkBgColor: "dark:bg-[hsl(270,40%,20%)]",
+    accentColor: "text-[hsl(270,80%,50%)]",
   },
   {
-    title: "E-Commerce Platform",
-    category: "Full-Stack Development",
-    metric: "2.5x",
-    metricLabel: "Revenue growth",
+    title: "Revamping The Messaging Experience For DoubtMind.",
+    description: "As the design lead, I was responsible for guiding the design direction and worked closely with a cross-functional team. Collaborating with product managers, developers, and stakeholders.",
+    category: "Project Editorial",
+    metrics: [
+      { label: "Development", value: "45%" },
+    ],
+    bgColor: "bg-[hsl(150,70%,92%)]",
+    darkBgColor: "dark:bg-[hsl(150,40%,18%)]",
+    accentColor: "text-[hsl(150,70%,35%)]",
   },
   {
-    title: "SaaS Marketing Site",
-    category: "Website Design",
-    metric: "+85%",
-    metricLabel: "Lead generation",
+    title: "Cross-Border Collaboration With Time Management Tool.",
+    description: "A startup dedicated to developing groundbreaking analytics that helps product teams understand user insights and make informed decisions about the growth of upcoming features time.",
+    category: "Project Editorial",
+    subInfo: "Tech Pulse Labs Design",
+    metrics: [
+      { label: "Research", value: "70%" },
+      { label: "Design", value: "85%" },
+    ],
+    bgColor: "bg-[hsl(200,80%,95%)]",
+    darkBgColor: "dark:bg-[hsl(200,40%,18%)]",
+    accentColor: "text-[hsl(200,80%,45%)]",
   },
 ];
 
 export function Portfolio() {
   return (
-    <section id="work" className="py-32">
+    <section id="work" className="py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
           <div>
-            <h2 className="font-display text-display-sm sm:text-display-md font-semibold text-foreground mb-4">
-              Featured <span className="text-gradient">work</span>
+            <span className="inline-block text-sm font-medium text-primary uppercase tracking-wider mb-3">
+              Featured Work
+            </span>
+            <h2 className="font-display text-display-sm sm:text-display-md font-semibold text-foreground">
+              Powering Growth Across Every
+              <br />
+              <span className="text-gradient">Frontier</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-xl">
-              Real results from real projects. See how we've helped businesses transform their digital presence.
-            </p>
           </div>
           <a
             href="#"
@@ -43,41 +64,61 @@ export function Portfolio() {
           </a>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {projects.map((project) => (
+        {/* Projects Grid */}
+        <div className="space-y-6">
+          {projects.map((project, index) => (
             <div
               key={project.title}
-              className="group relative rounded-xl border border-border/60 overflow-hidden hover:border-border transition-all duration-300 hover-lift cursor-pointer bg-card/50"
+              className={`group relative rounded-2xl lg:rounded-3xl overflow-hidden ${project.bgColor} ${project.darkBgColor} p-6 lg:p-10 transition-all duration-300 hover:scale-[1.01] cursor-pointer`}
             >
-              {/* Image placeholder */}
-              <div className="aspect-[4/3] bg-gradient-to-br from-secondary via-secondary/50 to-secondary/30 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
-                    <span className="text-lg font-display font-bold text-primary">Z</span>
-                  </div>
-                </div>
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-background/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full bg-foreground flex items-center justify-center">
-                    <ArrowUpRight className="w-5 h-5 text-background" />
-                  </div>
-                </div>
-              </div>
-              
-              {/* Content */}
-              <div className="p-6">
-                <span className="inline-block text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">
-                  {project.category}
-                </span>
-                <h3 className="font-display text-lg font-semibold text-foreground mb-4">
-                  {project.title}
-                </h3>
+              <div className="grid lg:grid-cols-2 gap-8 items-center">
+                {/* Content */}
+                <div className={`order-2 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
+                  <span className={`inline-flex items-center gap-2 text-xs font-medium uppercase tracking-wider mb-4 ${project.accentColor}`}>
+                    <span className="w-1.5 h-1.5 rounded-full bg-current" />
+                    {project.category}
+                  </span>
+                  
+                  <h3 className="font-display text-xl lg:text-2xl font-semibold text-foreground mb-4 leading-tight">
+                    {project.title}
+                  </h3>
+                  
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-lg">
+                    {project.description}
+                  </p>
 
-                {/* Metric */}
-                <div className="flex items-center gap-2 pt-4 border-t border-border/40">
-                  <TrendingUp className="w-4 h-4 text-primary" />
-                  <span className="text-2xl font-semibold text-foreground">{project.metric}</span>
-                  <span className="text-sm text-muted-foreground">{project.metricLabel}</span>
+                  {project.subInfo && (
+                    <p className="text-xs text-muted-foreground mb-4">{project.subInfo}</p>
+                  )}
+
+                  {/* Metrics */}
+                  <div className="flex flex-wrap gap-6">
+                    {project.metrics.map((metric) => (
+                      <div key={metric.label}>
+                        <div className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-1">
+                          {metric.value}
+                        </div>
+                        <div className="text-xs text-muted-foreground uppercase tracking-wide">
+                          {metric.label}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Image Placeholder */}
+                <div className={`order-1 ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
+                  <div className="relative aspect-[4/3] rounded-xl lg:rounded-2xl overflow-hidden bg-background/80 border border-border/20 shadow-2xl group-hover:shadow-3xl transition-shadow">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center">
+                        <span className="text-2xl font-display font-bold text-primary">Z</span>
+                      </div>
+                    </div>
+                    {/* Hover Arrow */}
+                    <div className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-foreground flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                      <ArrowUpRight className="w-4 h-4 text-background" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
