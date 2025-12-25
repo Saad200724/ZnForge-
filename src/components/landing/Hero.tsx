@@ -1,5 +1,6 @@
 import { ArrowRight, Github, Twitter, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import heroProjectPreview from "@/assets/hero-project-preview.png";
 
 export function Hero() {
   return (
@@ -106,29 +107,12 @@ export function Hero() {
               </div>
             </div>
             
-            {/* Preview Content - Current Project Showcase */}
-            <div className="aspect-[16/9] relative overflow-hidden">
-              {/* Flowing gradient background inspired by silk fabric */}
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-purple-100/60 to-stone-200" />
-              <div className="absolute top-0 right-0 w-3/4 h-full bg-gradient-to-bl from-purple-300/40 via-purple-200/30 to-transparent blur-2xl" />
-              <div className="absolute bottom-0 left-1/4 w-1/2 h-1/2 bg-gradient-to-t from-amber-100/50 to-transparent blur-xl" />
-              
-              {/* Content */}
-              <div className="relative z-10 h-full flex flex-col justify-center px-8 sm:px-12">
-                <span className="text-xs uppercase tracking-widest text-muted-foreground/70 mb-4">Current Project</span>
-                <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold text-foreground mb-2">
-                  Studio-quality
-                  <br />
-                  digital presence.
-                </h3>
-                <p className="text-primary font-display text-xl sm:text-2xl lg:text-3xl font-medium italic">
-                  Crafted, not templated.
-                </p>
-                <p className="mt-4 text-sm text-muted-foreground max-w-sm">
-                  We're currently building something beautiful for our next client.
-                </p>
-              </div>
-            </div>
+            {/* Preview Content - Current Project Image */}
+            <img 
+              src={heroProjectPreview} 
+              alt="PixBella - Current project preview" 
+              className="w-full h-auto object-cover"
+            />
           </div>
           
           {/* Floating gradient */}
