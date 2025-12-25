@@ -1,5 +1,6 @@
 import { Mail, MapPin, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import znforgeLogo from "@/assets/znforge-logo.png";
 
 const footerLinks = {
   company: [
@@ -69,11 +70,12 @@ export function Footer() {
           <div className="py-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
             {/* Brand */}
             <div className="col-span-2 lg:col-span-1">
-              <a href="#" className="flex items-center gap-2.5 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-lg">Z</span>
-                </div>
-                <span className="font-display font-semibold text-lg text-foreground tracking-tight">ZnForge</span>
+              <a href="#" className="flex items-center mb-4">
+                <img 
+                  src={znforgeLogo} 
+                  alt="ZnForge" 
+                  className="h-8 w-auto"
+                />
               </a>
               <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
                 Premium design and development for ambitious teams.
