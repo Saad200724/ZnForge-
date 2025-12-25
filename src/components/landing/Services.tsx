@@ -1,29 +1,29 @@
-import { Palette, Layout, Code, Smartphone, Search, Megaphone } from "lucide-react";
+import { Palette, Layout, Code, Smartphone, Search, Megaphone, ArrowRight } from "lucide-react";
 
 const services = [
   {
     icon: Palette,
     title: "Brand Design",
-    description: "Complete brand identity including logos, color palettes, and design systems.",
+    description: "Complete brand identity including logos, colour palettes, and comprehensive design systems.",
   },
   {
     icon: Layout,
     title: "UI/UX Design",
-    description: "User-centered interfaces that are both beautiful and highly functional.",
+    description: "User-centred interfaces that are both beautiful and highly functional.",
   },
   {
     icon: Code,
-    title: "Website Development",
+    title: "Web Development",
     description: "Fast, responsive, and scalable websites built with modern technologies.",
   },
   {
     icon: Smartphone,
     title: "App Development",
-    description: "Native and cross-platform mobile apps that users love.",
+    description: "Native and cross-platform mobile applications that users love.",
   },
   {
     icon: Search,
-    title: "SEO Optimization",
+    title: "SEO Optimisation",
     description: "Data-driven SEO strategies to boost your search rankings.",
   },
   {
@@ -35,34 +35,39 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-24 bg-secondary/30">
+    <section id="services" className="py-32 border-t border-border/40">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            What We <span className="text-gradient">Offer</span>
+          <h2 className="font-display text-display-sm sm:text-display-md font-semibold text-foreground mb-4">
+            Everything you need to <span className="text-gradient">grow</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            End-to-end digital solutions to transform your business
+            End-to-end digital solutions from strategy to execution
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
           {services.map((service) => (
             <div
               key={service.title}
-              className="group bg-card rounded-2xl p-6 border border-border hover:border-primary/50 transition-all duration-300 hover:glow cursor-pointer"
+              className="group relative rounded-xl border border-border/60 bg-card/30 p-6 hover:border-border hover:bg-card/50 transition-all duration-300 cursor-pointer"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                <service.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-secondary/50 border border-border/40 flex items-center justify-center flex-shrink-0 group-hover:border-primary/40 transition-colors">
+                  <service.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
+                
+                <div className="flex-1">
+                  <h3 className="font-display text-base font-semibold text-foreground mb-2 flex items-center gap-2">
+                    {service.title}
+                    <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-primary" />
+                  </h3>
+                  
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
               </div>
-              
-              <h3 className="font-display text-lg font-bold text-foreground mb-2">
-                {service.title}
-              </h3>
-              
-              <p className="text-sm text-muted-foreground">
-                {service.description}
-              </p>
             </div>
           ))}
         </div>

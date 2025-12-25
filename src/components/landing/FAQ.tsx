@@ -29,7 +29,7 @@ const faqs = [
   {
     question: "Can you help with an existing website?",
     answer:
-      "Absolutely! We can help with redesigns, performance optimization, adding new features, or migrating to a better technology stack. We'll assess your current site and recommend the best path forward.",
+      "Absolutely! We can help with redesigns, performance optimisation, adding new features, or migrating to a better technology stack. We'll assess your current site and recommend the best path forward.",
   },
   {
     question: "How do we communicate during the project?",
@@ -40,29 +40,29 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section id="faq" className="py-24">
+    <section id="faq" className="py-32 border-t border-border/40">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Frequently Asked <span className="text-gradient">Questions</span>
+          <h2 className="font-display text-display-sm sm:text-display-md font-semibold text-foreground mb-4">
+            Frequently asked <span className="text-gradient">questions</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Got questions? We've got answers.
+            Everything you need to know about working with us
           </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-card rounded-xl border border-border px-6 data-[state=open]:border-primary/50 data-[state=open]:glow-sm transition-all"
+                className="rounded-xl border border-border/60 bg-card/30 px-6 data-[state=open]:border-border data-[state=open]:bg-card/50 transition-all"
               >
-                <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-6">
+                <AccordionTrigger className="text-left font-medium text-foreground hover:no-underline py-5 text-sm sm:text-base">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-6">
+                <AccordionContent className="text-muted-foreground pb-5 text-sm leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

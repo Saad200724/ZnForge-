@@ -9,13 +9,19 @@ export default {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1280px",
       },
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Plus Jakarta Sans", "Inter", "system-ui", "sans-serif"],
+        sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+        display: ["Sora", "Inter", "system-ui", "sans-serif"],
+      },
+      fontSize: {
+        "display-xl": ["4.5rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+        "display-lg": ["3.75rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+        "display-md": ["3rem", { lineHeight: "1.15", letterSpacing: "-0.02em" }],
+        "display-sm": ["2.25rem", { lineHeight: "1.2", letterSpacing: "-0.01em" }],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -66,6 +72,9 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        xl: "1rem",
+        "2xl": "1.25rem",
+        "3xl": "1.5rem",
       },
       keyframes: {
         "accordion-down": {
@@ -77,49 +86,58 @@ export default {
           to: { height: "0" },
         },
         "fade-in": {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "0%": { opacity: "0", transform: "translateY(16px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         "fade-in-up": {
-          "0%": { opacity: "0", transform: "translateY(40px)" },
+          "0%": { opacity: "0", transform: "translateY(24px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         "slide-in-left": {
-          "0%": { opacity: "0", transform: "translateX(-40px)" },
+          "0%": { opacity: "0", transform: "translateX(-24px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
         "slide-in-right": {
-          "0%": { opacity: "0", transform: "translateX(40px)" },
+          "0%": { opacity: "0", transform: "translateX(24px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
         "scale-in": {
-          "0%": { opacity: "0", transform: "scale(0.95)" },
+          "0%": { opacity: "0", transform: "scale(0.96)" },
           "100%": { opacity: "1", transform: "scale(1)" },
         },
-        float: {
+        "float": {
           "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
+          "50%": { transform: "translateY(-8px)" },
         },
-        shimmer: {
+        "shimmer": {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
         },
-        marquee: {
+        "marquee": {
           "0%": { transform: "translateX(0%)" },
-          "100%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "pulse-subtle": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.7" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 0.6s ease-out forwards",
-        "fade-in-up": "fade-in-up 0.8s ease-out forwards",
-        "slide-in-left": "slide-in-left 0.6s ease-out forwards",
-        "slide-in-right": "slide-in-right 0.6s ease-out forwards",
-        "scale-in": "scale-in 0.5s ease-out forwards",
-        float: "float 3s ease-in-out infinite",
-        shimmer: "shimmer 2s linear infinite",
-        marquee: "marquee 30s linear infinite",
+        "fade-in": "fade-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "fade-in-up": "fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "slide-in-left": "slide-in-left 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "slide-in-right": "slide-in-right 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "scale-in": "scale-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "float": "float 4s ease-in-out infinite",
+        "shimmer": "shimmer 2s linear infinite",
+        "marquee": "marquee 40s linear infinite",
+        "pulse-subtle": "pulse-subtle 3s ease-in-out infinite",
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
   },
