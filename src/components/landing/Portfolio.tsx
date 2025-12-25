@@ -2,40 +2,41 @@ import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
-    title: "Building A Specialized Vertical Market For DoubtMind.",
-    description: "As the design lead for this project, I led all the design initiatives and regularly worked with a cross-functional team across stakeholders, designers, and the development team using JIRA.",
-    category: "Project Editorial",
+    title: "Meow Meow Pet Shop",
+    description: "A complete e-commerce platform redesign for a premium pet supplies retailer. We built a seamless shopping experience with AI-powered product recommendations and subscription management for recurring orders.",
+    category: "E-Commerce Platform",
     metrics: [
-      { label: "Research", value: "86%" },
-      { label: "Design", value: "70%" },
+      { label: "Conversion Rate", value: "340%" },
+      { label: "Revenue Growth", value: "85%" },
     ],
-    bgColor: "bg-[hsl(270,80%,95%)]",
-    darkBgColor: "dark:bg-[hsl(270,40%,20%)]",
-    accentColor: "text-[hsl(270,80%,50%)]",
+    bgColor: "bg-[hsl(35,90%,94%)]",
+    darkBgColor: "dark:bg-[hsl(35,40%,18%)]",
+    accentColor: "text-[hsl(35,90%,45%)]",
   },
   {
-    title: "Revamping The Messaging Experience For DoubtMind.",
-    description: "As the design lead, I was responsible for guiding the design direction and worked closely with a cross-functional team. Collaborating with product managers, developers, and stakeholders.",
-    category: "Project Editorial",
+    title: "Oxygen Robotics",
+    description: "Enterprise-grade web application for industrial robotics company. Features real-time monitoring dashboard, predictive maintenance analytics, and comprehensive fleet management system.",
+    category: "SaaS Platform",
     metrics: [
-      { label: "Development", value: "45%" },
-    ],
-    bgColor: "bg-[hsl(150,70%,92%)]",
-    darkBgColor: "dark:bg-[hsl(150,40%,18%)]",
-    accentColor: "text-[hsl(150,70%,35%)]",
-  },
-  {
-    title: "Cross-Border Collaboration With Time Management Tool.",
-    description: "A startup dedicated to developing groundbreaking analytics that helps product teams understand user insights and make informed decisions about the growth of upcoming features time.",
-    category: "Project Editorial",
-    subInfo: "Tech Pulse Labs Design",
-    metrics: [
-      { label: "Research", value: "70%" },
-      { label: "Design", value: "85%" },
+      { label: "User Engagement", value: "92%" },
+      { label: "Operational Efficiency", value: "67%" },
     ],
     bgColor: "bg-[hsl(200,80%,95%)]",
     darkBgColor: "dark:bg-[hsl(200,40%,18%)]",
     accentColor: "text-[hsl(200,80%,45%)]",
+  },
+  {
+    title: "SciVenture",
+    description: "Educational technology platform connecting students with hands-on science experiments. Interactive learning modules, progress tracking, and gamification elements to boost engagement.",
+    category: "EdTech Application",
+    subInfo: "Featured on Product Hunt",
+    metrics: [
+      { label: "Student Retention", value: "78%" },
+      { label: "Course Completion", value: "94%" },
+    ],
+    bgColor: "bg-[hsl(150,70%,92%)]",
+    darkBgColor: "dark:bg-[hsl(150,40%,18%)]",
+    accentColor: "text-[hsl(150,70%,35%)]",
   },
 ];
 
