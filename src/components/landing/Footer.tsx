@@ -165,9 +165,17 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Large Background Brand Name */}
-      <div className="relative w-full flex justify-center pointer-events-none py-8">
-        <span className="font-display text-[8rem] sm:text-[10rem] md:text-[14rem] lg:text-[18rem] font-bold text-foreground/10 leading-none select-none whitespace-nowrap">
+      {/* Large Background Brand Name with fade effect */}
+      <div className="relative w-full flex justify-center pointer-events-none py-8 overflow-hidden">
+        <span 
+          className="font-display text-[8rem] sm:text-[10rem] md:text-[14rem] lg:text-[18rem] font-bold leading-none select-none whitespace-nowrap"
+          style={{
+            background: 'linear-gradient(180deg, hsl(var(--foreground) / 0.08) 0%, hsl(var(--foreground) / 0.02) 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+          }}
+        >
           ZnForge
         </span>
       </div>
