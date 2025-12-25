@@ -96,13 +96,13 @@ export function Hero() {
             {/* Browser Chrome */}
             <div className="flex items-center gap-2 px-4 py-3 border-b border-border/60 bg-secondary/30">
               <div className="flex items-center gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
-                <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
-                <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
+                <div className="w-3 h-3 rounded-full bg-emerald-600" />
+                <div className="w-3 h-3 rounded-full bg-emerald-500" />
+                <div className="w-3 h-3 rounded-full bg-emerald-400" />
               </div>
               <div className="flex-1 flex justify-center">
                 <div className="px-4 py-1 rounded-md bg-secondary/50 text-xs text-muted-foreground">
-                  yourwebsite.com
+                  nextproject.znforge.dev
                 </div>
               </div>
             </div>
