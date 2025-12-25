@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import meowMeowImage from "@/assets/portfolio-meowmeow.png";
 
 const projects = [
   {
@@ -11,6 +12,7 @@ const projects = [
     ],
     cardBg: "bg-[hsl(40,20%,20%)]",
     accentBorder: "border-l-amber-500",
+    image: meowMeowImage,
   },
   {
     title: "Oxygen Robotics",
@@ -22,6 +24,7 @@ const projects = [
     ],
     cardBg: "bg-[hsl(180,15%,18%)]",
     accentBorder: "border-l-teal-500",
+    image: null,
   },
   {
     title: "SciVenture",
@@ -33,6 +36,7 @@ const projects = [
     ],
     cardBg: "bg-[hsl(160,20%,16%)]",
     accentBorder: "border-l-emerald-500",
+    image: null,
   },
 ];
 
@@ -99,16 +103,22 @@ export function Portfolio() {
                   </div>
                 </div>
 
-                {/* Image Area */}
                 <div className={`relative ${index % 2 === 0 ? 'order-2' : 'order-2 lg:order-1'}`}>
                   <div className="aspect-[4/3] lg:aspect-auto lg:h-full bg-gradient-to-br from-background/20 to-background/5 flex items-center justify-center relative overflow-hidden">
-                    {/* Placeholder Logo */}
-                    <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center z-10">
-                      <span className="text-2xl font-display font-bold text-primary">Z</span>
-                    </div>
+                    {project.image ? (
+                      <img 
+                        src={project.image} 
+                        alt={`${project.title} mockup`}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center z-10">
+                        <span className="text-2xl font-display font-bold text-primary">Z</span>
+                      </div>
+                    )}
                     
                     {/* Subtle gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
                     
                     {/* Hover Arrow */}
                     <div className="absolute bottom-6 right-6 w-10 h-10 rounded-full bg-foreground/10 border border-foreground/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:bg-foreground group-hover:border-foreground">
