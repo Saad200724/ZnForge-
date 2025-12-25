@@ -16,11 +16,11 @@ const projects = [
   },
   {
     title: "Oxygen Robotics",
-    description: "Enterprise-grade web application for industrial robotics company. Features real-time monitoring dashboard, predictive maintenance analytics, and comprehensive fleet management system.",
-    category: "SaaS Platform",
+    description: "International non-profit platform empowering students to explore AI, robotics, and software development. Features event management, learning resources, mentorship matching, and a global community hub.",
+    category: "Non-Profit Platform",
     metrics: [
-      { label: "User Engagement", value: "92%" },
-      { label: "Efficiency", value: "+67%" },
+      { label: "Students Reached", value: "50K+" },
+      { label: "Countries", value: "32" },
     ],
     cardBg: "bg-[hsl(180,15%,18%)]",
     accentBorder: "border-l-teal-500",
