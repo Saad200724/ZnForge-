@@ -7,10 +7,10 @@ export function Hero() {
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       {/* Premium Background */}
       <div className="absolute inset-0 bg-grid" />
-      <div className="absolute inset-0 bg-radial" />
+      <div className="absolute inset-0 bg-radial animate-gradient" />
       
       {/* Subtle gradient orbs */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-3xl animate-float" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -39,15 +39,15 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in delay-4">
             <Button 
               size="lg" 
-              className="bg-foreground hover:bg-foreground/90 text-background font-medium px-8 h-12 text-base group"
+              className="bg-foreground hover:bg-foreground/90 text-background font-medium px-8 h-12 text-base group hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
             >
               Start a project
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-border/60 bg-transparent hover:bg-secondary/50 px-8 h-12 text-base font-medium"
+              className="border-border/60 bg-transparent hover:bg-primary hover:text-primary-foreground hover:border-primary px-8 h-12 text-base font-medium hover:scale-105 transition-all duration-300"
             >
               View our work
             </Button>
@@ -57,13 +57,13 @@ export function Hero() {
           <div className="flex items-center justify-center gap-6 mt-12 text-muted-foreground animate-in delay-5">
             <span className="text-sm">Follow us</span>
             <div className="flex items-center gap-4">
-              <a href="#" className="hover:text-foreground transition-colors" aria-label="GitHub">
+              <a href="#" className="hover:text-primary hover:scale-110 transition-all duration-300" aria-label="GitHub">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="#" className="hover:text-foreground transition-colors" aria-label="Twitter">
+              <a href="#" className="hover:text-primary hover:scale-110 transition-all duration-300" aria-label="Twitter">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="hover:text-foreground transition-colors" aria-label="LinkedIn">
+              <a href="#" className="hover:text-primary hover:scale-110 transition-all duration-300" aria-label="LinkedIn">
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
@@ -91,14 +91,14 @@ export function Hero() {
         </div>
 
         {/* Browser Preview Window - GitHub inspired */}
-        <div className="mt-20 relative max-w-5xl mx-auto animate-in delay-5">
-          <div className="relative rounded-xl overflow-hidden border border-border/60 bg-card glow-subtle">
+        <div className="mt-20 relative max-w-5xl mx-auto animate-scale-in delay-5">
+          <div className="relative rounded-xl overflow-hidden border border-border/60 bg-card glow-subtle hover:glow transition-all duration-700 group">
             {/* Browser Chrome */}
             <div className="flex items-center gap-2 px-4 py-3 border-b border-border/60 bg-secondary/30">
               <div className="flex items-center gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-emerald-600" />
-                <div className="w-3 h-3 rounded-full bg-emerald-500" />
-                <div className="w-3 h-3 rounded-full bg-emerald-400" />
+                <div className="w-3 h-3 rounded-full bg-emerald-600 group-hover:animate-pulse" />
+                <div className="w-3 h-3 rounded-full bg-emerald-500 group-hover:animate-pulse" style={{ animationDelay: '0.1s' }} />
+                <div className="w-3 h-3 rounded-full bg-emerald-400 group-hover:animate-pulse" style={{ animationDelay: '0.2s' }} />
               </div>
               <div className="flex-1 flex justify-center">
                 <div className="px-4 py-1 rounded-md bg-secondary/50 text-xs text-muted-foreground">
@@ -111,12 +111,12 @@ export function Hero() {
             <img 
               src={heroProjectPreview} 
               alt="PixBella - Current project preview" 
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
             />
           </div>
           
           {/* Floating gradient */}
-          <div className="absolute -inset-4 bg-gradient-radial from-primary/5 via-transparent to-transparent -z-10 blur-2xl" />
+          <div className="absolute -inset-4 bg-gradient-radial from-primary/5 via-transparent to-transparent -z-10 blur-2xl animate-pulse-glow" />
         </div>
       </div>
     </section>

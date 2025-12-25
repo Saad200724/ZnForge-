@@ -62,25 +62,26 @@ export function Pricing() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
-          {plans.map((plan) => (
+          {plans.map((plan, index) => (
             <div
               key={plan.name}
-              className={`relative rounded-xl p-8 border transition-all duration-300 ${
+              className={`group relative rounded-xl p-8 border transition-all duration-500 animate-in ${
                 plan.popular
-                  ? "border-primary/40 bg-card glow-sm"
-                  : "border-border/60 bg-card/30 hover:border-border"
+                  ? "border-primary/40 bg-card animate-pulse-glow"
+                  : "border-border/60 bg-card/30 hover:border-primary/30 card-hover"
               }`}
+              style={{ animationDelay: `${0.2 + index * 0.15}s` }}
             >
               {plan.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <div className="px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-medium">
+                  <div className="px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-medium animate-float">
                     Most popular
                   </div>
                 </div>
               )}
 
               <div className="mb-8">
-                <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                <h3 className="font-display text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                   {plan.name}
                 </h3>
                 <p className="text-sm text-muted-foreground mb-4">{plan.description}</p>
@@ -95,25 +96,29 @@ export function Pricing() {
               </div>
 
               <ul className="space-y-3 mb-8">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                {plan.features.map((feature, featureIndex) => (
+                  <li 
+                    key={feature} 
+                    className="flex items-start gap-3 opacity-0 animate-in"
+                    style={{ animationDelay: `${0.4 + index * 0.15 + featureIndex * 0.05}s` }}
+                  >
+                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
                       <Check className="w-3 h-3 text-primary" />
                     </div>
-                    <span className="text-sm text-muted-foreground">{feature}</span>
+                    <span className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">{feature}</span>
                   </li>
                 ))}
               </ul>
 
               <Button
-                className={`w-full group ${
+                className={`w-full group/btn transition-all duration-300 ${
                   plan.popular
-                    ? "bg-foreground hover:bg-foreground/90 text-background"
-                    : "bg-secondary hover:bg-secondary/80 text-foreground"
+                    ? "bg-foreground hover:bg-foreground/90 text-background hover:scale-105"
+                    : "bg-secondary hover:bg-primary hover:text-primary-foreground text-foreground hover:scale-105"
                 }`}
               >
                 Get started
-                <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                <ArrowRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform duration-300" />
               </Button>
             </div>
           ))}

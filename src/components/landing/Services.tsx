@@ -45,32 +45,33 @@ export function Services() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service) => (
+          {services.map((service, index) => (
             <div
               key={service.title}
-              className="group flex flex-col items-center text-center cursor-pointer"
+              className="group flex flex-col items-center text-center cursor-pointer animate-in"
+              style={{ animationDelay: `${0.1 + index * 0.15}s` }}
             >
               {/* Image Stack */}
               <div className="relative w-full aspect-square mb-6 flex items-center justify-center">
                 <img 
                   src={service.image} 
                   alt={service.title}
-                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-contain group-hover:scale-110 group-hover:-rotate-2 transition-all duration-700 ease-out"
                 />
               </div>
               
               {/* Icon */}
-              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-4 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-500">
                 <service.icon className="w-6 h-6 text-primary" />
               </div>
               
               {/* Title */}
-              <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+              <h3 className="font-display text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                 {service.title}
               </h3>
               
               {/* Description */}
-              <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
+              <p className="text-sm text-muted-foreground leading-relaxed max-w-xs group-hover:text-foreground/80 transition-colors duration-300">
                 {service.description}
               </p>
             </div>

@@ -57,9 +57,10 @@ export function FAQ() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="rounded-xl border border-border/60 bg-card/30 px-6 data-[state=open]:border-border data-[state=open]:bg-card/50 transition-all"
+                className="rounded-xl border border-border/60 bg-card/30 px-6 data-[state=open]:border-primary/40 data-[state=open]:bg-card/50 transition-all duration-500 hover:border-border animate-in card-hover"
+                style={{ animationDelay: `${0.1 + index * 0.1}s` }}
               >
-                <AccordionTrigger className="text-left font-medium text-foreground hover:no-underline py-5 text-sm sm:text-base">
+                <AccordionTrigger className="text-left font-medium text-foreground hover:no-underline py-5 text-sm sm:text-base hover:text-primary transition-colors duration-300">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground pb-5 text-sm leading-relaxed">
