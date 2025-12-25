@@ -1,35 +1,33 @@
-import { Palette, Layout, Code, Smartphone, Search, Megaphone, ArrowRight } from "lucide-react";
+import { Palette, Globe, Rocket, Smartphone } from "lucide-react";
+import brandDesignImg from "@/assets/service-brand-design.png";
+import webDevImg from "@/assets/service-web-dev.png";
+import saasImg from "@/assets/service-saas.png";
+import webappImg from "@/assets/service-webapp.png";
 
 const services = [
   {
     icon: Palette,
     title: "Brand Design",
     description: "Complete brand identity including logos, colour palettes, and comprehensive design systems.",
+    image: brandDesignImg,
   },
   {
-    icon: Layout,
-    title: "UI/UX Design",
-    description: "User-centred interfaces that are both beautiful and highly functional.",
-  },
-  {
-    icon: Code,
+    icon: Globe,
     title: "Web Development",
     description: "Fast, responsive, and scalable websites built with modern technologies.",
+    image: webDevImg,
+  },
+  {
+    icon: Rocket,
+    title: "SaaS & Startup Development",
+    description: "End-to-end product development for startups and SaaS platforms that scale.",
+    image: saasImg,
   },
   {
     icon: Smartphone,
-    title: "App Development",
-    description: "Native and cross-platform mobile applications that users love.",
-  },
-  {
-    icon: Search,
-    title: "SEO Optimisation",
-    description: "Data-driven SEO strategies to boost your search rankings.",
-  },
-  {
-    icon: Megaphone,
-    title: "Digital Marketing",
-    description: "Comprehensive marketing solutions to grow your audience.",
+    title: "Web App Development",
+    description: "Powerful web applications with intuitive interfaces and seamless user experiences.",
+    image: webappImg,
   },
 ];
 
@@ -46,28 +44,35 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service) => (
             <div
               key={service.title}
-              className="group relative rounded-xl border border-border/60 bg-card/30 p-6 hover:border-border hover:bg-card/50 transition-all duration-300 cursor-pointer"
+              className="group flex flex-col items-center text-center cursor-pointer"
             >
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-secondary/50 border border-border/40 flex items-center justify-center flex-shrink-0 group-hover:border-primary/40 transition-colors">
-                  <service.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                </div>
-                
-                <div className="flex-1">
-                  <h3 className="font-display text-base font-semibold text-foreground mb-2 flex items-center gap-2">
-                    {service.title}
-                    <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-primary" />
-                  </h3>
-                  
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
+              {/* Image Stack */}
+              <div className="relative w-full aspect-square mb-6 flex items-center justify-center">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
+              
+              {/* Icon */}
+              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <service.icon className="w-6 h-6 text-primary" />
+              </div>
+              
+              {/* Title */}
+              <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                {service.title}
+              </h3>
+              
+              {/* Description */}
+              <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
+                {service.description}
+              </p>
             </div>
           ))}
         </div>
