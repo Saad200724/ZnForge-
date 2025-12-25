@@ -106,8 +106,8 @@
 
   /* Custom Scrollbar - Greenish Theme */
   ::-webkit-scrollbar {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
   }
 
   ::-webkit-scrollbar-track {
