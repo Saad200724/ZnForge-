@@ -35,13 +35,14 @@ export function Values() {
           {values.map((value, index) => (
             <div
               key={value.title}
-              className="group relative rounded-xl border border-border/60 bg-card/50 p-8 hover:border-border transition-all duration-300 hover-lift"
+              className="group relative rounded-xl border border-border/60 bg-card/50 p-8 transition-all duration-500 card-hover animate-in"
+              style={{ animationDelay: `${0.2 + index * 0.15}s` }}
             >
-              <div className="w-12 h-12 rounded-lg bg-secondary/50 border border-border/40 flex items-center justify-center mb-6 group-hover:border-primary/40 transition-colors">
-                <value.icon className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
+              <div className="w-12 h-12 rounded-lg bg-secondary/50 border border-border/40 flex items-center justify-center mb-6 group-hover:border-primary/40 group-hover:scale-110 group-hover:bg-primary/10 transition-all duration-500">
+                <value.icon className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
               </div>
               
-              <h3 className="font-display text-lg font-semibold text-foreground mb-3">
+              <h3 className="font-display text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                 {value.title}
               </h3>
               
@@ -50,7 +51,7 @@ export function Values() {
               </p>
 
               {/* Subtle corner decoration */}
-              <div className="absolute top-6 right-6 text-5xl font-bold text-border/30 group-hover:text-border/50 transition-colors font-display">
+              <div className="absolute top-6 right-6 text-5xl font-bold text-border/30 group-hover:text-primary/20 transition-colors duration-500 font-display">
                 0{index + 1}
               </div>
             </div>

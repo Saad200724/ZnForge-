@@ -71,29 +71,33 @@ export function Portfolio() {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className={`group relative rounded-2xl overflow-hidden ${project.cardBg} border border-border/30 transition-all duration-300 hover:border-border/60 cursor-pointer`}
+              className={`group relative rounded-2xl overflow-hidden ${project.cardBg} border border-border/30 transition-all duration-700 hover:border-primary/40 cursor-pointer card-hover animate-in`}
+              style={{ animationDelay: `${0.2 + index * 0.2}s` }}
             >
               <div className="grid lg:grid-cols-2 gap-0">
                 {/* Content */}
                 <div className={`p-8 lg:p-10 flex flex-col justify-center ${index % 2 === 0 ? 'order-1' : 'order-1 lg:order-2'}`}>
                   <span className="inline-flex items-center gap-2 text-xs font-medium text-primary uppercase tracking-wider mb-4">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                     {project.category}
                   </span>
                   
-                  <h3 className="font-display text-xl lg:text-2xl font-semibold text-foreground mb-4 leading-tight">
+                  <h3 className="font-display text-xl lg:text-2xl font-semibold text-foreground mb-4 leading-tight group-hover:text-primary transition-colors duration-500">
                     {project.title}
                   </h3>
                   
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-8 max-w-md">
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-8 max-w-md group-hover:text-foreground/70 transition-colors duration-500">
                     {project.description}
                   </p>
 
                   {/* Metrics */}
                   <div className="flex flex-wrap gap-8">
-                    {project.metrics.map((metric) => (
-                      <div key={metric.label}>
-                        <div className="font-display text-2xl lg:text-3xl font-semibold text-foreground mb-1">
+                    {project.metrics.map((metric, metricIndex) => (
+                      <div 
+                        key={metric.label}
+                        className="group/metric"
+                      >
+                        <div className="font-display text-2xl lg:text-3xl font-semibold text-foreground mb-1 group-hover/metric:text-primary transition-colors duration-300">
                           {metric.value}
                         </div>
                         <div className="text-xs text-muted-foreground uppercase tracking-wide">
@@ -110,20 +114,20 @@ export function Portfolio() {
                       <img 
                         src={project.image} 
                         alt={`${project.title} mockup`}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                       />
                     ) : (
-                      <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center z-10">
+                      <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center z-10 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-500">
                         <span className="text-2xl font-display font-bold text-primary">Z</span>
                       </div>
                     )}
                     
                     {/* Subtle gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent group-hover:opacity-50 transition-opacity duration-500" />
                     
                     {/* Hover Arrow */}
-                    <div className="absolute bottom-6 right-6 w-10 h-10 rounded-full bg-foreground/10 border border-foreground/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:bg-foreground group-hover:border-foreground">
-                      <ArrowUpRight className="w-4 h-4 text-foreground group-hover:text-background transition-colors" />
+                    <div className="absolute bottom-6 right-6 w-10 h-10 rounded-full bg-foreground/10 border border-foreground/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:bg-primary group-hover:border-primary group-hover:scale-110">
+                      <ArrowUpRight className="w-4 h-4 text-foreground group-hover:text-primary-foreground transition-colors duration-300" />
                     </div>
                   </div>
                 </div>
