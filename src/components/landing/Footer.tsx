@@ -166,14 +166,12 @@ export function Footer() {
       </div>
 
       {/* Large Background Brand Name */}
-      <div className="relative w-full flex justify-center pointer-events-none py-12 overflow-hidden">
-        <span 
-          className="font-display text-[8rem] sm:text-[10rem] md:text-[14rem] lg:text-[18rem] font-bold leading-none select-none whitespace-nowrap text-muted-foreground/20"
-        >
+      <div className="relative w-full flex justify-center pointer-events-none py-16 overflow-hidden">
+        <span className="font-display text-[8rem] sm:text-[10rem] md:text-[14rem] lg:text-[18rem] font-bold leading-none select-none whitespace-nowrap text-foreground/[0.06]">
           ZnForge
         </span>
         {/* Fade overlay from bottom */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-background to-transparent" />
       </div>
     </footer>
   );
