@@ -22,20 +22,20 @@ export function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 p-4">
-      <div className="max-w-2xl mx-auto">
+    <nav className="fixed top-0 left-0 right-0 z-50 pt-4 px-4">
+      <div className="max-w-xl mx-auto">
         {/* Floating Container */}
-        <div className={`flex items-center justify-between px-3 lg:px-4 py-2 rounded-full transition-all duration-500 ${
+        <div className={`flex items-center justify-between px-4 py-2 rounded-xl transition-all duration-500 ${
           scrolled 
             ? "bg-background/95 backdrop-blur-xl shadow-lg shadow-black/5 border border-border/50" 
-            : "bg-background/80 backdrop-blur-md shadow-md shadow-black/5 border border-border/30"
+            : "bg-background/90 backdrop-blur-md shadow-md shadow-black/5 border border-border/30"
         }`}>
           {/* Logo */}
           <a href="#" className="flex items-center group flex-shrink-0">
             <img 
               src={znforgeLogo} 
               alt="ZnForge" 
-              className="h-6 w-auto transition-transform group-hover:scale-105"
+              className="h-5 w-auto transition-transform group-hover:scale-105"
             />
           </a>
 
@@ -45,12 +45,12 @@ export function Navbar() {
               <div key={link.label} className="flex items-center">
                 <a
                   href={link.href}
-                  className="px-3 py-1 text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+                  className="px-2.5 text-muted-foreground hover:text-foreground transition-colors text-xs font-medium uppercase tracking-wide"
                 >
                   {link.label}
                 </a>
                 {index < navLinks.length - 1 && (
-                  <div className="w-px h-3.5 bg-border/60" />
+                  <div className="w-px h-3 bg-border/60" />
                 )}
               </div>
             ))}
@@ -58,19 +58,19 @@ export function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center">
-            <Button className="bg-emerald-500 hover:bg-emerald-600 text-white font-medium px-4 h-8 rounded-full text-sm group">
-              Get Started
-              <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-0.5 transition-transform" />
+            <Button className="bg-foreground hover:bg-foreground/90 text-background font-medium px-3 h-7 rounded-lg text-xs group">
+              <ArrowRight className="w-3 h-3 mr-1" />
+              Start now
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-foreground hover:bg-secondary/50 rounded-full transition-colors"
+            className="lg:hidden p-1.5 text-foreground hover:bg-secondary/50 rounded-lg transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
+            {isOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
         </div>
 
