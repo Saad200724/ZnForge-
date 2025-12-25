@@ -18,9 +18,9 @@ const Index = () => {
       <TrustedBy />
       <AIFeature />
       <Values />
-      <Portfolio />
       <Services />
       <Pricing />
+      <Portfolio />
       <Comparison />
       <FAQ />
       <Footer />
