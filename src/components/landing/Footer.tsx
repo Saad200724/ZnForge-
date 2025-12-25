@@ -167,7 +167,7 @@ export function Footer() {
 
       {/* Large Background Brand Name */}
       <div className="relative w-full flex justify-center pointer-events-none py-8">
-        <span className="font-display text-[8rem] sm:text-[10rem] md:text-[14rem] lg:text-[18rem] font-bold text-foreground/[0.03] leading-none select-none whitespace-nowrap">
+        <span className="font-display text-[8rem] sm:text-[10rem] md:text-[14rem] lg:text-[18rem] font-bold text-foreground/10 leading-none select-none whitespace-nowrap">
           ZnForge
         </span>
       </div>
