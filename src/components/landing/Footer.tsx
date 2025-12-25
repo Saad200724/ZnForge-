@@ -1,38 +1,39 @@
-import { Mail, MapPin, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import znforgeLogo from "@/assets/znforge-logo.png";
+import { Twitter, Instagram, Linkedin, Github } from "lucide-react";
 
 const footerLinks = {
-  company: [
-    { label: "About", href: "#" },
-    { label: "Careers", href: "#" },
-    { label: "Blog", href: "#" },
-    { label: "Press", href: "#" },
-  ],
-  services: [
-    { label: "Web Design", href: "#services" },
-    { label: "Development", href: "#services" },
-    { label: "Branding", href: "#services" },
-    { label: "Marketing", href: "#services" },
+  product: [
+    { label: "Studio", href: "#" },
+    { label: "Features", href: "#services" },
+    { label: "Pricing", href: "#pricing" },
+    { label: "Docs", href: "#" },
   ],
   resources: [
     { label: "Documentation", href: "#" },
-    { label: "Case Studies", href: "#work" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Tutorials", href: "#" },
+    { label: "Blog", href: "#" },
+    { label: "Support", href: "#" },
+  ],
+  company: [
+    { label: "About", href: "#" },
+    { label: "Careers", href: "#" },
+    { label: "Contact", href: "#" },
+    { label: "Partners", href: "#" },
   ],
 };
 
 const socialLinks = [
-  { label: "Twitter", href: "#" },
-  { label: "LinkedIn", href: "#" },
-  { label: "GitHub", href: "#" },
-  { label: "Dribbble", href: "#" },
+  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Github, href: "#", label: "GitHub" },
 ];
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/40">
+    <footer className="border-t border-border/40 relative overflow-hidden">
       {/* CTA Section */}
       <div className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-radial" />
@@ -67,40 +68,42 @@ export function Footer() {
       {/* Main Footer */}
       <div className="border-t border-border/40">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="py-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
-            {/* Brand */}
-            <div className="col-span-2 lg:col-span-1">
-              <a href="#" className="flex items-center mb-4">
+          <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+            {/* Brand Section */}
+            <div className="lg:col-span-4">
+              <a href="#" className="flex items-center mb-6">
                 <img 
                   src={znforgeLogo} 
                   alt="ZnForge" 
                   className="h-8 w-auto"
                 />
               </a>
-              <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-                Premium design and development for ambitious teams.
+              <p className="text-sm text-muted-foreground mb-8 leading-relaxed max-w-xs">
+                ZnForge empowers brands to transform their vision into stunning, studio-quality digital experiences — making product showcasing easier than ever.
               </p>
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Mail className="w-4 h-4" />
-                  <span>info@znforge.dev</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <MapPin className="w-4 h-4" />
-                  <span>London, United Kingdom</span>
-                </div>
+              <div className="flex items-center gap-4">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    aria-label={social.label}
+                    className="text-muted-foreground hover:text-foreground transition-colors duration-300"
+                  >
+                    <social.icon className="w-5 h-5" />
+                  </a>
+                ))}
               </div>
             </div>
 
-            {/* Links */}
-            <div>
-              <h4 className="font-medium text-foreground mb-4 text-sm">Company</h4>
-              <ul className="space-y-3">
-                {footerLinks.company.map((link) => (
+            {/* Links Columns */}
+            <div className="lg:col-span-2">
+              <h4 className="font-semibold text-foreground mb-6 text-sm tracking-wide uppercase">Product</h4>
+              <ul className="space-y-4">
+                {footerLinks.product.map((link) => (
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
                     >
                       {link.label}
                     </a>
@@ -109,30 +112,14 @@ export function Footer() {
               </ul>
             </div>
 
-            <div>
-              <h4 className="font-medium text-foreground mb-4 text-sm">Services</h4>
-              <ul className="space-y-3">
-                {footerLinks.services.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-medium text-foreground mb-4 text-sm">Resources</h4>
-              <ul className="space-y-3">
+            <div className="lg:col-span-2">
+              <h4 className="font-semibold text-foreground mb-6 text-sm tracking-wide uppercase">Resources</h4>
+              <ul className="space-y-4">
                 {footerLinks.resources.map((link) => (
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
                     >
                       {link.label}
                     </a>
@@ -141,14 +128,14 @@ export function Footer() {
               </ul>
             </div>
 
-            <div>
-              <h4 className="font-medium text-foreground mb-4 text-sm">Social</h4>
-              <ul className="space-y-3">
-                {socialLinks.map((link) => (
+            <div className="lg:col-span-2">
+              <h4 className="font-semibold text-foreground mb-6 text-sm tracking-wide uppercase">Company</h4>
+              <ul className="space-y-4">
+                {footerLinks.company.map((link) => (
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
                     >
                       {link.label}
                     </a>
@@ -159,20 +146,30 @@ export function Footer() {
           </div>
 
           {/* Bottom Bar */}
-          <div className="py-6 border-t border-border/40 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="py-8 border-t border-border/40 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} ZnForge. All rights reserved.
             </p>
-            <div className="flex items-center gap-6">
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <div className="flex items-center gap-8">
+              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
                 Privacy Policy
               </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
                 Terms of Service
+              </a>
+              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
+                Cookies
               </a>
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Large Background Brand Name */}
+      <div className="absolute bottom-0 left-0 right-0 flex justify-center pointer-events-none overflow-hidden">
+        <span className="font-display text-[12rem] md:text-[18rem] lg:text-[22rem] font-bold text-foreground/[0.03] leading-none select-none translate-y-1/3">
+          ZnForge
+        </span>
       </div>
     </footer>
   );
