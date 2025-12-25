@@ -95,11 +95,40 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-background text-foreground dark antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    overflow-x: hidden;
+  }
+
+  /* Custom Scrollbar - Greenish Theme */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(153 30% 8%);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, hsl(153 60% 30%) 0%, hsl(153 50% 20%) 100%);
+    border-radius: 5px;
+    border: 2px solid hsl(153 30% 8%);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, hsl(153 60% 40%) 0%, hsl(153 50% 30%) 100%);
+  }
+
+  /* Firefox scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(153 60% 30%) hsl(153 30% 8%);
   }
 }
 
