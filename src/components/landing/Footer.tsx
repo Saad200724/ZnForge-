@@ -165,20 +165,15 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Large Background Brand Name with fade effect */}
-      <div className="relative w-full flex justify-center pointer-events-none py-8 overflow-hidden">
+      {/* Large Background Brand Name */}
+      <div className="relative w-full flex justify-center pointer-events-none py-12 overflow-hidden">
         <span 
-          className="font-display text-[8rem] sm:text-[10rem] md:text-[14rem] lg:text-[18rem] font-bold leading-none select-none whitespace-nowrap"
-          style={{
-            background:
-              'linear-gradient(180deg, hsl(var(--foreground) / 0.16) 0%, hsl(var(--foreground) / 0.08) 45%, hsl(var(--foreground) / 0.01) 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-          }}
+          className="font-display text-[8rem] sm:text-[10rem] md:text-[14rem] lg:text-[18rem] font-bold leading-none select-none whitespace-nowrap text-muted-foreground/20"
         >
           ZnForge
         </span>
+        {/* Fade overlay from bottom */}
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       </div>
     </footer>
   );
