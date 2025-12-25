@@ -61,10 +61,10 @@ export function Pricing() {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className="group relative rounded-2xl border border-border/60 bg-card/20 backdrop-blur-sm hover:border-primary/50 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 flex flex-col h-full"
+              className="group relative rounded-2xl border border-border/60 bg-card/20 backdrop-blur-sm hover:border-primary/30 transition-all duration-500 hover:shadow-lg hover:shadow-primary/5 flex flex-col h-full"
             >
-              {/* Glow effect on hover */}
-              <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-b from-primary/20 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-sm" />
+              {/* Subtle glow effect on hover */}
+              <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-b from-primary/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
               
               {/* Features section */}
               <div className="p-6 sm:p-8 flex-1">

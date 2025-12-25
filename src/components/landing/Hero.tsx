@@ -1,8 +1,30 @@
 import { ArrowRight, Github, Twitter, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroProjectPreview from "@/assets/hero-project-preview.png";
+import { useRef, useState } from "react";
 
 export function Hero() {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [rotateStyle, setRotateStyle] = useState({ transform: 'perspective(1000px) rotateX(0deg) rotateY(0deg)' });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * -15;
+    const rotateY = ((x - centerX) / centerX) * 15;
+    setRotateStyle({
+      transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setRotateStyle({ transform: 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)' });
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       {/* Premium Animated Background */}
@@ -93,9 +115,15 @@ export function Hero() {
           ))}
         </div>
 
-        {/* Browser Preview Window with impressive hover */}
+        {/* Browser Preview Window with 3D mouse-follow effect */}
         <div className="mt-20 relative max-w-5xl mx-auto animate-scale-in delay-6">
-          <div className="relative rounded-2xl overflow-hidden border-2 border-primary/20 bg-card shadow-2xl shadow-primary/10 hover:shadow-primary/30 hover:border-primary/40 transition-all duration-700 group hover-tilt">
+          <div 
+            ref={cardRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{ ...rotateStyle, transition: 'transform 0.15s ease-out' }}
+            className="relative rounded-2xl overflow-hidden border-2 border-primary/20 bg-card shadow-2xl shadow-primary/10 hover:shadow-primary/20 hover:border-primary/40 group"
+          >
             {/* Browser Chrome */}
             <div className="flex items-center gap-2 px-4 py-3 border-b border-border/60 bg-secondary/50">
               <div className="flex items-center gap-2">
@@ -123,8 +151,8 @@ export function Hero() {
             </div>
           </div>
           
-          {/* Animated glow behind */}
-          <div className="absolute -inset-8 bg-gradient-radial from-primary/20 via-primary/5 to-transparent -z-10 blur-3xl animate-pulse-glow" />
+          {/* Subtle glow behind */}
+          <div className="absolute -inset-8 bg-gradient-radial from-primary/10 via-primary/5 to-transparent -z-10 blur-3xl" />
         </div>
       </div>
     </section>
