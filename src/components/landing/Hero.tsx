@@ -69,21 +69,6 @@ export function Hero() {
             </Button>
           </div>
 
-          {/* Social Proof Row */}
-          <div className="flex items-center justify-center gap-6 mt-12 text-muted-foreground animate-in delay-5">
-            <span className="text-sm">Follow us</span>
-            <div className="flex items-center gap-4">
-              <a href="#" className="hover:text-primary hover:scale-125 hover:rotate-12 transition-all duration-300" aria-label="GitHub">
-                <Github className="w-5 h-5" />
-              </a>
-              <a href="#" className="hover:text-primary hover:scale-125 hover:-rotate-12 transition-all duration-300" aria-label="Twitter">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="hover:text-primary hover:scale-125 hover:rotate-12 transition-all duration-300" aria-label="LinkedIn">
-                <Linkedin className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
         </div>
 
         {/* Stats Row with hover effects */}

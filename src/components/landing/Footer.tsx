@@ -81,18 +81,6 @@ export function Footer() {
               <p className="text-sm text-muted-foreground mb-8 leading-relaxed max-w-xs">
                 ZnForge empowers brands to transform their vision into stunning, studio-quality digital experiences — making product showcasing easier than ever.
               </p>
-              <div className="flex items-center gap-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    aria-label={social.label}
-                    className="text-muted-foreground hover:text-foreground transition-colors duration-300"
-                  >
-                    <social.icon className="w-5 h-5" />
-                  </a>
-                ))}
-              </div>
             </div>
 
             {/* Links Columns */}
