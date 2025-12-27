@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Video } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import znforgeLogo from "@/assets/znforge-white-logo.png";
 
@@ -59,10 +59,10 @@ export function Navbar() {
           </div>
 
           {/* CTA Button - Always visible */}
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-3 sm:px-4 h-10 sm:h-10 rounded-lg text-xs sm:text-sm group flex-shrink-0">
-            <Video className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1 sm:mr-1.5" />
-            <span className="hidden sm:inline">Book a call</span>
-            <span className="sm:hidden">Call</span>
+          <Button className="bg-foreground hover:bg-foreground/90 text-background font-medium px-3 sm:px-4 h-10 sm:h-10 rounded-lg text-xs sm:text-sm group flex-shrink-0">
+            <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1 sm:mr-1.5" />
+            <span className="hidden sm:inline">Start now</span>
+            <span className="sm:hidden">Start</span>
           </Button>
         </div>
       </div>
