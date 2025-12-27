@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import znforgeLogo from "@/assets/znforge-logo.png";
+import znforgeLogo from "@/assets/znforge-white-logo.png";
 import { Twitter, Instagram, Linkedin, Github } from "lucide-react";
 
 const footerLinks = {

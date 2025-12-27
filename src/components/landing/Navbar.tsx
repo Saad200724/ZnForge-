@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import znforgeLogo from "@/assets/znforge-logo.png";
+import znforgeLogo from "@/assets/znforge-white-logo.png";
 
 const navLinks = [
   { label: "Services", href: "#services" },
