@@ -1,4 +1,5 @@
 import { Twitter, Instagram, Linkedin, Github } from "lucide-react";
+import { Link } from "react-router-dom";
 import znforgeLogo from "@/assets/znforge-white-logo.png";
 
 const socialLinks = [
@@ -6,6 +7,14 @@ const socialLinks = [
   { icon: Instagram, href: "#", label: "Instagram" },
   { icon: Linkedin, href: "#", label: "LinkedIn" },
   { icon: Github, href: "#", label: "GitHub" },
+];
+
+const footerPages = [
+  { label: "Make", href: "/make" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+  { label: "Career", href: "/career" },
+  { label: "Working Procedure", href: "/working-procedure" },
 ];
 
 export function Footer() {
@@ -65,34 +74,91 @@ export function Footer() {
             </div>
 
             {/* Divider Line */}
-            <div className="mt-16 mb-8 h-px bg-gradient-to-r from-transparent via-border/40 to-transparent" />
+            <div className="mt-16 mb-12 h-px bg-gradient-to-r from-transparent via-border/40 to-transparent" />
 
-            {/* Bottom Bar - Legal Links */}
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-muted-foreground">
-              <p>© {currentYear} ZnForge. All rights reserved.</p>
-              
-              <div className="flex items-center gap-6 flex-wrap justify-center md:justify-end">
-                <a 
-                  href="#" 
-                  className="hover:text-primary transition-colors duration-300 hover:underline"
-                >
-                  Privacy Policy
-                </a>
-                <div className="hidden md:block w-px h-4 bg-border/40" />
-                <a 
-                  href="#" 
-                  className="hover:text-primary transition-colors duration-300 hover:underline"
-                >
-                  Terms of Service
-                </a>
-                <div className="hidden md:block w-px h-4 bg-border/40" />
-                <a 
-                  href="#" 
-                  className="hover:text-primary transition-colors duration-300 hover:underline"
-                >
-                  Cookies
-                </a>
+            {/* Navigation Links Section */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-12 pb-8 border-b border-border/40">
+              <div>
+                <h4 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Pages</h4>
+                <ul className="space-y-2">
+                  {footerPages.map((page) => (
+                    <li key={page.href}>
+                      <Link 
+                        to={page.href}
+                        className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
+                      >
+                        {page.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
+
+              <div>
+                <h4 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Legal</h4>
+                <ul className="space-y-2">
+                  <li>
+                    <Link 
+                      to="/privacy-policy"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
+                    >
+                      Privacy Policy
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
+                      to="/terms-of-service"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
+                    >
+                      Terms of Service
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
+                      to="/cookies"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
+                    >
+                      Cookie Policy
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Connect</h4>
+                <ul className="space-y-2">
+                  <li>
+                    <a 
+                      href="#"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
+                    >
+                      Twitter
+                    </a>
+                  </li>
+                  <li>
+                    <a 
+                      href="#"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
+                    >
+                      Instagram
+                    </a>
+                  </li>
+                  <li>
+                    <a 
+                      href="#"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
+                    >
+                      LinkedIn
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Bottom Bar - Copyright */}
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+              <p>© {currentYear} ZnForge. All rights reserved.</p>
+              <p>Crafted with passion for exceptional digital experiences</p>
             </div>
           </div>
         </div>
