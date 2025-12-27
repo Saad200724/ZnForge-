@@ -1,30 +1,5 @@
-import { ArrowRight, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import znforgeLogo from "@/assets/znforge-white-logo.png";
 import { Twitter, Instagram, Linkedin, Github } from "lucide-react";
-import { useState } from "react";
-
-const footerLinks = {
-  product: [
-    { label: "Studio", href: "#" },
-    { label: "Features", href: "#services" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "Docs", href: "#" },
-  ],
-  resources: [
-    { label: "Documentation", href: "#" },
-    { label: "Tutorials", href: "#" },
-    { label: "Blog", href: "#" },
-    { label: "Support", href: "#" },
-  ],
-  company: [
-    { label: "About", href: "#" },
-    { label: "Careers", href: "#" },
-    { label: "Contact", href: "#" },
-    { label: "Partners", href: "#" },
-  ],
-};
+import znforgeLogo from "@/assets/znforge-white-logo.png";
 
 const socialLinks = [
   { icon: Twitter, href: "#", label: "Twitter" },
@@ -34,159 +9,102 @@ const socialLinks = [
 ];
 
 export function Footer() {
-  const [email, setEmail] = useState("");
-  
-  return (
-    <footer className="border-t border-border/40 relative overflow-hidden">
-      {/* CTA Section */}
-      <div className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-radial" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="font-display text-display-sm sm:text-display-md font-semibold text-foreground mb-6">
-              Ready to start your project?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Let's discuss how we can help you achieve your digital goals.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button 
-                size="lg" 
-                className="bg-foreground hover:bg-foreground/90 text-background font-medium px-8 h-12 group"
-              >
-                Get in touch
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-border/60 bg-transparent hover:bg-secondary/50 px-8 h-12 font-medium"
-              >
-                View pricing
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
+  const currentYear = new Date().getFullYear();
 
-      {/* Main Footer */}
-      <div className="border-t border-border/40">
+  return (
+    <footer className="relative border-t border-border/40 overflow-hidden">
+      {/* Elegant Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background pointer-events-none" />
+      
+      {/* Decorative Elements */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="relative z-10">
+        {/* Main Footer Content */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
-            {/* Brand Section */}
-            <div className="lg:col-span-4">
-              <a href="#" className="flex items-center mb-6">
+          <div className="py-24">
+            {/* Brand & Social Section */}
+            <div className="flex flex-col items-center text-center space-y-12">
+              {/* Logo */}
+              <a href="#" className="inline-flex items-center hover:opacity-80 transition-opacity duration-300">
                 <img 
                   src={znforgeLogo} 
                   alt="ZnForge" 
-                  className="h-12 sm:h-14 w-auto"
+                  className="h-16 w-auto"
                 />
               </a>
-              <p className="text-sm text-muted-foreground mb-8 leading-relaxed max-w-xs">
-                ZnForge empowers brands to transform their vision into stunning, studio-quality digital experiences — making product showcasing easier than ever.
-              </p>
-            </div>
 
-            {/* Links Columns */}
-            <div className="lg:col-span-2">
-              <h4 className="font-semibold text-foreground mb-6 text-sm tracking-wide uppercase">Product</h4>
-              <ul className="space-y-4">
-                {footerLinks.product.map((link) => (
-                  <li key={link.label}>
+              {/* Brand Description */}
+              <div className="max-w-2xl mx-auto space-y-6">
+                <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground">
+                  Craft stunning digital experiences
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  ZnForge empowers brands to transform their vision into extraordinary, studio-quality digital experiences that captivate and inspire.
+                </p>
+              </div>
+
+              {/* Social Links - Fancy Icons */}
+              <div className="flex items-center justify-center gap-8">
+                {socialLinks.map((social) => {
+                  const Icon = social.icon;
+                  return (
                     <a
-                      href={link.href}
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
+                      key={social.label}
+                      href={social.href}
+                      aria-label={social.label}
+                      className="group relative w-12 h-12 flex items-center justify-center rounded-full border border-border/40 text-muted-foreground hover:text-primary hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
                     >
-                      {link.label}
+                      <Icon className="w-5 h-5" />
+                      <div className="absolute inset-0 rounded-full bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
                     </a>
-                  </li>
-                ))}
-              </ul>
+                  );
+                })}
+              </div>
             </div>
 
-            <div className="lg:col-span-2">
-              <h4 className="font-semibold text-foreground mb-6 text-sm tracking-wide uppercase">Resources</h4>
-              <ul className="space-y-4">
-                {footerLinks.resources.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {/* Divider Line */}
+            <div className="mt-16 mb-8 h-px bg-gradient-to-r from-transparent via-border/40 to-transparent" />
 
-            <div className="lg:col-span-2">
-              <h4 className="font-semibold text-foreground mb-6 text-sm tracking-wide uppercase">Company</h4>
-              <ul className="space-y-4">
-                {footerLinks.company.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Newsletter Section */}
-            <div className="lg:col-span-2">
-              <h4 className="font-semibold text-foreground mb-6 text-sm tracking-wide uppercase">Stay Updated</h4>
-              <p className="text-sm text-muted-foreground mb-4">
-                Get the latest updates and insights delivered to your inbox.
-              </p>
-              <div className="flex gap-2">
-                <Input
-                  type="email"
-                  placeholder="your@email.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="bg-secondary/30 border-border/40 focus-visible:ring-primary text-foreground placeholder:text-muted-foreground/60"
-                />
-                <Button 
-                  size="sm"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 flex-shrink-0"
+            {/* Bottom Bar - Legal Links */}
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-muted-foreground">
+              <p>© {currentYear} ZnForge. All rights reserved.</p>
+              
+              <div className="flex items-center gap-6 flex-wrap justify-center md:justify-end">
+                <a 
+                  href="#" 
+                  className="hover:text-primary transition-colors duration-300 hover:underline"
                 >
-                  <Mail className="w-4 h-4" />
-                </Button>
+                  Privacy Policy
+                </a>
+                <div className="hidden md:block w-px h-4 bg-border/40" />
+                <a 
+                  href="#" 
+                  className="hover:text-primary transition-colors duration-300 hover:underline"
+                >
+                  Terms of Service
+                </a>
+                <div className="hidden md:block w-px h-4 bg-border/40" />
+                <a 
+                  href="#" 
+                  className="hover:text-primary transition-colors duration-300 hover:underline"
+                >
+                  Cookies
+                </a>
               </div>
             </div>
           </div>
-
-          {/* Bottom Bar */}
-          <div className="py-8 border-t border-border/40 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} ZnForge. All rights reserved.
-            </p>
-            <div className="flex items-center gap-8">
-              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
-                Terms of Service
-              </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
-                Cookies
-              </a>
-            </div>
-          </div>
         </div>
-      </div>
 
-      {/* Large Background Brand Name */}
-      <div className="relative w-full flex justify-center pointer-events-none py-16 overflow-hidden">
-        <span className="font-display text-[8rem] sm:text-[10rem] md:text-[14rem] lg:text-[18rem] font-bold leading-none select-none whitespace-nowrap text-foreground/[0.06]">
-          ZnForge
-        </span>
-        {/* Fade overlay from bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-background to-transparent" />
+        {/* Watermark Background Text */}
+        <div className="relative w-full flex justify-center pointer-events-none overflow-hidden pb-8">
+          <span className="font-display text-[10rem] sm:text-[12rem] md:text-[16rem] font-bold leading-none select-none whitespace-nowrap text-foreground/[0.04] animate-pulse">
+            ZnForge
+          </span>
+          {/* Fade overlay */}
+          <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-background to-transparent" />
+        </div>
       </div>
     </footer>
   );
