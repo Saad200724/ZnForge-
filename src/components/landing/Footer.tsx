@@ -75,7 +75,7 @@ export function Footer() {
                 <img 
                   src={znforgeLogo} 
                   alt="ZnForge" 
-                  className="h-8 w-auto"
+                  className="h-12 sm:h-14 w-auto"
                 />
               </a>
               <p className="text-sm text-muted-foreground mb-8 leading-relaxed max-w-xs">
