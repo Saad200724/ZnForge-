@@ -90,8 +90,11 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-8 border-t border-border/40 text-center text-sm text-muted-foreground">
-          <p>© {currentYear} ZnForge. All rights reserved.</p>
+        <div className="py-8 border-t border-border/40 space-y-4">
+          <p className="text-center text-sm text-muted-foreground">© {currentYear} ZnForge. All rights reserved.</p>
+          <div className="text-center">
+            <img src={znforgeLogo} alt="ZnForge" className="h-8 mx-auto opacity-60 hover:opacity-100 transition-opacity" />
+          </div>
         </div>
       </div>
     </footer>
