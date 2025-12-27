@@ -7,6 +7,7 @@ import { Services } from "@/components/landing/Services";
 import { Pricing } from "@/components/landing/Pricing";
 import { Comparison } from "@/components/landing/Comparison";
 import { FAQ } from "@/components/landing/FAQ";
+import { CTASection } from "@/components/landing/CTASection";
 import { Footer } from "@/components/landing/Footer";
 
 const Index = () => {
@@ -21,6 +22,7 @@ const Index = () => {
       <Pricing />
       <Comparison />
       <FAQ />
+      <CTASection />
       <Footer />
     </div>
   );
