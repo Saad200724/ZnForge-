@@ -38,14 +38,6 @@ export function Hero() {
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Animated badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 mb-8 animate-in delay-1 hover:border-primary/40 hover:bg-primary/10 transition-all duration-500 cursor-default">
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm text-foreground font-medium">
-              Trusted by 200+ companies worldwide
-            </span>
-          </div>
-
           {/* Main Headline with shimmer effect */}
           <h1 className="font-display text-display-md sm:text-display-lg lg:text-display-xl font-bold text-foreground mb-6 animate-in delay-2">
             Build Your Own Software,
