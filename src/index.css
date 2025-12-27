@@ -503,4 +503,59 @@
     25% { transform: translateX(-5px); }
     75% { transform: translateX(5px); }
   }
+
+  /* Floating profile animations */
+  .animate-float-profile-1 {
+    animation: floatProfile1 8s ease-in-out infinite;
+  }
+
+  @keyframes floatProfile1 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(20px, -15px) rotate(-5deg); }
+    50% { transform: translate(0, -30px) rotate(0deg); }
+    75% { transform: translate(-20px, -15px) rotate(5deg); }
+  }
+
+  .animate-float-profile-2 {
+    animation: floatProfile2 7s ease-in-out infinite;
+  }
+
+  @keyframes floatProfile2 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(-25px, -20px) rotate(5deg); }
+    50% { transform: translate(0, -25px) rotate(0deg); }
+    75% { transform: translate(25px, -20px) rotate(-5deg); }
+  }
+
+  .animate-float-profile-3 {
+    animation: floatProfile3 9s ease-in-out infinite;
+  }
+
+  @keyframes floatProfile3 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(15px, -25px) rotate(-3deg); }
+    50% { transform: translate(0, -20px) rotate(0deg); }
+    75% { transform: translate(-15px, -25px) rotate(3deg); }
+  }
+
+  .animate-float-profile-4 {
+    animation: floatProfile4 8.5s ease-in-out infinite;
+  }
+
+  @keyframes floatProfile4 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(-20px, -18px) rotate(3deg); }
+    50% { transform: translate(0, -28px) rotate(0deg); }
+    75% { transform: translate(20px, -18px) rotate(-3deg); }
+  }
+
+  /* Cursor pointer animation */
+  .animate-cursor-point {
+    animation: cursorPoint 3s ease-in-out infinite;
+  }
+
+  @keyframes cursorPoint {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.7; }
+    50% { transform: translate(4px, 4px) rotate(8deg); opacity: 1; }
+  }
 }
