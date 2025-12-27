@@ -1,31 +1,27 @@
-import meowImage from '@assets/meow_1766807438157.png';
-import sciventureImage from '@assets/sciventure-ui_1766807438163.png';
-import oxygenImage from '@assets/oxygen_1766807438167.png';
+import { Navbar } from "@/components/landing/Navbar";
+import { Hero } from "@/components/landing/Hero";
+import { AIFeature } from "@/components/landing/AIFeature";
+import { Values } from "@/components/landing/Values";
+import { Portfolio } from "@/components/landing/Portfolio";
+import { Services } from "@/components/landing/Services";
+import { Pricing } from "@/components/landing/Pricing";
+import { Comparison } from "@/components/landing/Comparison";
+import { FAQ } from "@/components/landing/FAQ";
+import { Footer } from "@/components/landing/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-black flex flex-col gap-0">
-      <div className="w-full">
-        <img 
-          src={meowImage} 
-          alt="Meow Mockup" 
-          className="w-full h-auto block"
-        />
-      </div>
-      <div className="w-full">
-        <img 
-          src={sciventureImage} 
-          alt="Sciventure Mockup" 
-          className="w-full h-auto block"
-        />
-      </div>
-      <div className="w-full">
-        <img 
-          src={oxygenImage} 
-          alt="Oxygen Mockup" 
-          className="w-full h-auto block"
-        />
-      </div>
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <Hero />
+      <AIFeature />
+      <Portfolio />
+      <Values />
+      <Services />
+      <Pricing />
+      <Comparison />
+      <FAQ />
+      <Footer />
     </div>
   );
 };
