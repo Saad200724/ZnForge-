@@ -1,7 +1,9 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import znforgeLogo from "@/assets/znforge-white-logo.png";
 import { Twitter, Instagram, Linkedin, Github } from "lucide-react";
+import { useState } from "react";
 
 const footerLinks = {
   product: [
@@ -32,6 +34,8 @@ const socialLinks = [
 ];
 
 export function Footer() {
+  const [email, setEmail] = useState("");
+  
   return (
     <footer className="border-t border-border/40 relative overflow-hidden">
       {/* CTA Section */}
@@ -130,6 +134,46 @@ export function Footer() {
                   </li>
                 ))}
               </ul>
+            </div>
+
+            {/* Newsletter Section */}
+            <div className="lg:col-span-3">
+              <h4 className="font-semibold text-foreground mb-6 text-sm tracking-wide uppercase">Stay Updated</h4>
+              <p className="text-sm text-muted-foreground mb-4">
+                Get the latest updates and insights delivered to your inbox.
+              </p>
+              <div className="flex flex-col gap-3">
+                <div className="flex gap-2">
+                  <Input
+                    type="email"
+                    placeholder="your@email.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="bg-secondary/30 border-border/40 focus-visible:ring-primary text-foreground placeholder:text-muted-foreground/60"
+                  />
+                  <Button 
+                    size="sm"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 flex-shrink-0"
+                  >
+                    <Mail className="w-4 h-4" />
+                  </Button>
+                </div>
+                <div className="flex items-center gap-3 pt-2">
+                  <span className="text-xs text-muted-foreground">Follow us</span>
+                  <div className="flex items-center gap-3">
+                    {socialLinks.map((social) => (
+                      <a
+                        key={social.label}
+                        href={social.href}
+                        aria-label={social.label}
+                        className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                      >
+                        <social.icon className="w-4 h-4" />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
