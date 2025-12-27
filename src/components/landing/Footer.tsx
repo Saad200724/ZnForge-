@@ -77,7 +77,7 @@ export function Footer() {
             <div className="mt-16 mb-12 h-px bg-gradient-to-r from-transparent via-border/40 to-transparent" />
 
             {/* Navigation Links Section - New Design */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 pb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 mb-12 pb-8 md:items-start">
               {/* Left: Contact Info - Larger */}
               <div className="space-y-6">
                 <h3 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">Let's work<br />together</h3>
@@ -91,66 +91,69 @@ export function Footer() {
                 </div>
               </div>
 
-              {/* Company Info */}
-              <div>
-                <h4 className="text-xs font-semibold text-muted-foreground mb-6 uppercase tracking-widest">Company Info</h4>
-                <ul className="space-y-3">
-                  <li>
-                    <Link 
-                      to="/contact"
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
-                    >
-                      Contact
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      to="/about"
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
-                    >
-                      About
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      to="/career"
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
-                    >
-                      Careers
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+              {/* Right: Company Info & Policies */}
+              <div className="grid grid-cols-2 gap-8">
+                {/* Company Info */}
+                <div>
+                  <h4 className="text-xs font-semibold text-muted-foreground mb-6 uppercase tracking-widest">Company Info</h4>
+                  <ul className="space-y-3">
+                    <li>
+                      <Link 
+                        to="/contact"
+                        className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
+                      >
+                        Contact
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        to="/about"
+                        className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
+                      >
+                        About
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        to="/career"
+                        className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
+                      >
+                        Careers
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
 
-              {/* Policies */}
-              <div>
-                <h4 className="text-xs font-semibold text-muted-foreground mb-6 uppercase tracking-widest">Policies</h4>
-                <ul className="space-y-3">
-                  <li>
-                    <Link 
-                      to="/privacy-policy"
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
-                    >
-                      Privacy Policy
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      to="/terms-of-service"
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
-                    >
-                      Terms of Service
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      to="/cookies"
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
-                    >
-                      Cookie Policy
-                    </Link>
-                  </li>
-                </ul>
+                {/* Policies */}
+                <div>
+                  <h4 className="text-xs font-semibold text-muted-foreground mb-6 uppercase tracking-widest">Policies</h4>
+                  <ul className="space-y-3">
+                    <li>
+                      <Link 
+                        to="/privacy-policy"
+                        className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
+                      >
+                        Privacy Policy
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        to="/terms-of-service"
+                        className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
+                      >
+                        Terms of Service
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        to="/cookies"
+                        className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
+                      >
+                        Cookie Policy
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
 
