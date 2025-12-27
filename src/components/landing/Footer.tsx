@@ -76,27 +76,77 @@ export function Footer() {
             {/* Divider Line */}
             <div className="mt-16 mb-12 h-px bg-gradient-to-r from-transparent via-border/40 to-transparent" />
 
-            {/* Navigation Links Section */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-12 pb-8 border-b border-border/40">
+            {/* Navigation Links Section - New Design */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 pb-8">
+              {/* Left: Contact Info */}
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-foreground">Let's work<br />together</h3>
+                <div className="space-y-3">
+                  <a 
+                    href="mailto:info@znforge.dev"
+                    className="block text-primary font-semibold hover:text-primary/80 transition-colors duration-300"
+                  >
+                    info@znforge.dev
+                  </a>
+                  <a 
+                    href="tel:+15551234567"
+                    className="block text-primary font-semibold hover:text-primary/80 transition-colors duration-300"
+                  >
+                    +1 (555) 123-4567
+                  </a>
+                </div>
+              </div>
+
+              {/* Follow Us */}
               <div>
-                <h4 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Pages</h4>
-                <ul className="space-y-2">
-                  {footerPages.map((page) => (
-                    <li key={page.href}>
-                      <Link 
-                        to={page.href}
-                        className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
-                      >
-                        {page.label}
-                      </Link>
-                    </li>
-                  ))}
+                <h4 className="text-xs font-semibold text-muted-foreground mb-6 uppercase tracking-widest">Follow Us</h4>
+                <ul className="space-y-3">
+                  <li>
+                    <a 
+                      href="#"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
+                    >
+                      LinkedIn
+                    </a>
+                  </li>
                 </ul>
               </div>
 
+              {/* Company Info */}
               <div>
-                <h4 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Legal</h4>
-                <ul className="space-y-2">
+                <h4 className="text-xs font-semibold text-muted-foreground mb-6 uppercase tracking-widest">Company Info</h4>
+                <ul className="space-y-3">
+                  <li>
+                    <Link 
+                      to="/contact"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
+                    >
+                      Contact
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
+                      to="/about"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
+                    >
+                      About
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
+                      to="/career"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
+                    >
+                      Careers
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Policies */}
+              <div>
+                <h4 className="text-xs font-semibold text-muted-foreground mb-6 uppercase tracking-widest">Policies</h4>
+                <ul className="space-y-3">
                   <li>
                     <Link 
                       to="/privacy-policy"
@@ -120,36 +170,6 @@ export function Footer() {
                     >
                       Cookie Policy
                     </Link>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Connect</h4>
-                <ul className="space-y-2">
-                  <li>
-                    <a 
-                      href="#"
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
-                    >
-                      Twitter
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="#"
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
-                    >
-                      Instagram
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="#"
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
-                    >
-                      LinkedIn
-                    </a>
                   </li>
                 </ul>
               </div>
