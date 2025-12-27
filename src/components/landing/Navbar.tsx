@@ -35,7 +35,7 @@ export function Navbar() {
             <img 
               src={znforgeLogo} 
               alt="ZnForge" 
-              className="h-5 sm:h-6 w-auto transition-transform group-hover:scale-105"
+              className="h-8 sm:h-10 w-auto transition-transform group-hover:scale-105"
             />
           </a>
 
