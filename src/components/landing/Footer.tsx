@@ -77,39 +77,18 @@ export function Footer() {
             <div className="mt-16 mb-12 h-px bg-gradient-to-r from-transparent via-border/40 to-transparent" />
 
             {/* Navigation Links Section - New Design */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 pb-8">
-              {/* Left: Contact Info */}
-              <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-foreground">Let's work<br />together</h3>
-                <div className="space-y-3">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 pb-8">
+              {/* Left: Contact Info - Larger */}
+              <div className="space-y-6">
+                <h3 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">Let's work<br />together</h3>
+                <div>
                   <a 
                     href="mailto:info@znforge.dev"
-                    className="block text-primary font-semibold hover:text-primary/80 transition-colors duration-300"
+                    className="block text-lg md:text-xl text-primary font-semibold hover:text-primary/80 transition-colors duration-300"
                   >
                     info@znforge.dev
                   </a>
-                  <a 
-                    href="tel:+15551234567"
-                    className="block text-primary font-semibold hover:text-primary/80 transition-colors duration-300"
-                  >
-                    +1 (555) 123-4567
-                  </a>
                 </div>
-              </div>
-
-              {/* Follow Us */}
-              <div>
-                <h4 className="text-xs font-semibold text-muted-foreground mb-6 uppercase tracking-widest">Follow Us</h4>
-                <ul className="space-y-3">
-                  <li>
-                    <a 
-                      href="#"
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
-                    >
-                      LinkedIn
-                    </a>
-                  </li>
-                </ul>
               </div>
 
               {/* Company Info */}
