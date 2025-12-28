@@ -139,7 +139,7 @@ export function Footer() {
 
             {/* Bottom Bar - Copyright */}
             <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-              <p>© {currentYear} ZnForge. All rights reserved.</p>
+              <p>© 2026 ZnForge. All rights reserved.</p>
               <p>Crafted with passion for exceptional digital experiences</p>
             </div>
           </div>

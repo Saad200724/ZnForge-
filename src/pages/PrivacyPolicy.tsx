@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto prose prose-invert space-y-8">
             <div>
-              <p className="text-muted-foreground mb-6">Last updated: December 2025</p>
+              <p className="text-muted-foreground mb-6">Last updated: January 2026</p>
               <p className="text-muted-foreground leading-relaxed">
                 At ZnForge, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.
               </p>

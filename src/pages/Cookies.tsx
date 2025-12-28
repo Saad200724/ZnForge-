@@ -18,7 +18,7 @@ export default function Cookies() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto prose prose-invert space-y-8">
             <div>
-              <p className="text-muted-foreground mb-6">Last updated: December 2025</p>
+              <p className="text-muted-foreground mb-6">Last updated: January 2026</p>
               <p className="text-muted-foreground leading-relaxed">
                 ZnForge uses cookies and similar tracking technologies to enhance your browsing experience and understand how you use our website.
               </p>

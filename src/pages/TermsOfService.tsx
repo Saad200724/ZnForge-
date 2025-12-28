@@ -18,7 +18,7 @@ export default function TermsOfService() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto prose prose-invert space-y-8">
             <div>
-              <p className="text-muted-foreground mb-6">Last updated: December 2025</p>
+              <p className="text-muted-foreground mb-6">Last updated: January 2026</p>
               <p className="text-muted-foreground leading-relaxed">
                 Welcome to ZnForge. These Terms of Service govern your use of our website and services. By accessing and using our services, you accept and agree to be bound by the terms and provision of this agreement.
               </p>
