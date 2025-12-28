@@ -46,7 +46,7 @@ export function Hero() {
             />
           </div>
           {/* Bottom Right Avatar */}
-          <div className="absolute -bottom-12 -right-4 sm:bottom-[10%] sm:right-[-10%] animate-float-avatar z-20 pointer-events-none" style={{ animationDelay: '3s' }}>
+          <div className="absolute -bottom-12 -right-4 sm:bottom-[10%] sm:right-[-14%] animate-float-avatar z-20 pointer-events-none" style={{ animationDelay: '3s' }}>
             <img 
               src="/assets/avatar-cursor-2.webp" 
               alt="Avatar with cursor" 
