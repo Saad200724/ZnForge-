@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { Navbar } from "@/components/landing/Navbar";
-import { Footer } from "@/components/landing/Footer";
 
 export default function Booking() {
+  const currentYear = new Date().getFullYear();
+
   useEffect(() => {
     (async function () {
       const cal = await getCalApi();
@@ -38,7 +39,13 @@ export default function Booking() {
           />
         </div>
       </main>
-      <Footer />
+      
+      {/* Simple Footer for Booking Page */}
+      <footer className="border-t border-border/40 py-8 bg-background/50 backdrop-blur-sm">
+        <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
+          <p>© {currentYear} ZnForge. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   );
 }
