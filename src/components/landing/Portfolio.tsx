@@ -2,18 +2,6 @@ import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
-    title: "SciVenture",
-    description: "Educational technology platform connecting students with hands-on science experiments. Interactive learning modules, progress tracking, and gamification elements to boost engagement.",
-    category: "EdTech Application",
-    metrics: [
-      { label: "Retention", value: "78%" },
-      { label: "Completion", value: "94%" },
-    ],
-    cardBg: "bg-[hsl(160,20%,16%)]",
-    accentBorder: "border-l-emerald-500",
-    image: "/images/portfolio/sciventure.png",
-  },
-  {
     title: "Meow Meow Pet Shop",
     description: "A complete e-commerce platform redesign for a premium pet supplies retailer. We built a seamless shopping experience with AI-powered product recommendations and subscription management for recurring orders.",
     category: "E-Commerce Platform",
@@ -24,6 +12,18 @@ const projects = [
     cardBg: "bg-[hsl(40,20%,20%)]",
     accentBorder: "border-l-amber-500",
     image: "/images/portfolio/meow.png",
+  },
+  {
+    title: "SciVenture",
+    description: "Educational technology platform connecting students with hands-on science experiments. Interactive learning modules, progress tracking, and gamification elements to boost engagement.",
+    category: "EdTech Application",
+    metrics: [
+      { label: "Retention", value: "78%" },
+      { label: "Completion", value: "94%" },
+    ],
+    cardBg: "bg-[hsl(160,20%,16%)]",
+    accentBorder: "border-l-emerald-500",
+    image: "/images/portfolio/sciventure.png",
   },
   {
     title: "Oxygen Robotics",
