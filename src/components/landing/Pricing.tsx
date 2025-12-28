@@ -205,17 +205,20 @@ export function Pricing() {
                     {plan.name}
                   </h3>
                   <p className="text-sm text-muted-foreground mb-4 line-clamp-2 h-10">{plan.subtitle}</p>
-                  <div className="mb-6 h-12 flex flex-col justify-end">
-                    {plan.previousPrice && (
-                      <span className="text-sm text-muted-foreground line-through decoration-red-500/50 block">
-                        {plan.previousPrice} TK
-                      </span>
-                    )}
-                    <span className="font-display text-3xl font-bold text-foreground">
-                      {plan.price}
-                      {plan.price !== "Custom" && plan.price !== "Quote" ? " TK" : ""}
-                    </span>
-                  </div>
+                    <div className="mb-6 h-12 flex flex-col justify-end">
+                      {plan.previousPrice && (
+                        <span className="text-sm text-green-500 font-medium line-through decoration-green-500/50 block">
+                          <img src="/icons/taka.png" alt="TK" className="inline-block w-3 h-3 mr-1 invert" />
+                          {plan.previousPrice}
+                        </span>
+                      )}
+                      <div className="flex items-baseline gap-1">
+                        <img src="/icons/taka.png" alt="TK" className="w-6 h-6 invert" />
+                        <span className="font-display text-3xl font-bold text-foreground">
+                          {plan.price}
+                        </span>
+                      </div>
+                    </div>
                   <Button
                     className={`w-full rounded-lg py-5 font-medium transition-all duration-300 ${
                       plan.popular
