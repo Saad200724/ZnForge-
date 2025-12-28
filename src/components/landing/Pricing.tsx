@@ -188,7 +188,7 @@ export function Pricing() {
               <div className="p-3 sm:p-6 flex-1">
                 <p className="text-[10px] sm:text-sm font-medium text-muted-foreground mb-2 sm:mb-4 uppercase tracking-tighter sm:tracking-normal">Included</p>
                 <ul className="space-y-2 sm:space-y-3">
-                  {plan.features.slice(0, 3).map((feature) => (
+                  {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-1.5 sm:gap-3">
                       <div className="w-3.5 h-3.5 sm:w-5 sm:h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-primary transition-all duration-300">
                         <Check className="w-2 h-2 sm:w-3 sm:h-3 text-primary group-hover:text-primary-foreground transition-colors" />
@@ -196,9 +196,6 @@ export function Pricing() {
                       <span className="text-[10px] sm:text-sm text-foreground line-clamp-1">{feature}</span>
                     </li>
                   ))}
-                  {plan.features.length > 3 && (
-                    <li className="text-[9px] sm:text-xs text-muted-foreground italic">+ {plan.features.length - 3} more</li>
-                  )}
                 </ul>
               </div>
 
