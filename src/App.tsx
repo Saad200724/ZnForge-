@@ -11,10 +11,10 @@ import Make from "./pages/Make";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Career from "./pages/Career";
+import Procedure from "./pages/Procedure";
 import WorkingProcedure from "./pages/WorkingProcedure";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
-import Cookies from "./pages/Cookies";
 
 const queryClient = new QueryClient();
 
@@ -32,10 +32,10 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/career" element={<Career />} />
+          <Route path="/procedure" element={<Procedure />} />
           <Route path="/working-procedure" element={<WorkingProcedure />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
-          <Route path="/cookies" element={<Cookies />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

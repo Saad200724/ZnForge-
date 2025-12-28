@@ -126,10 +126,10 @@ export function Footer() {
                     </li>
                     <li>
                       <Link 
-                        to="/cookies"
+                        to="/procedure"
                         className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover:underline"
                       >
-                        Cookie Policy
+                        Our Procedure
                       </Link>
                     </li>
                   </ul>
