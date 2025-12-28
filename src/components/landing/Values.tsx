@@ -35,18 +35,24 @@ export function Values() {
           {values.map((value, index) => (
             <div
               key={value.title}
-              className="group relative rounded-xl border border-border/60 bg-card/50 p-4 sm:p-8 transition-all duration-500 card-hover animate-in h-full flex flex-col"
+              className={`group relative rounded-xl border border-border/60 bg-card/50 p-4 sm:p-8 transition-all duration-500 card-hover animate-in h-full flex flex-col ${
+                index === 2 ? "col-span-2 sm:col-span-1" : ""
+              }`}
               style={{ animationDelay: `${0.2 + index * 0.15}s` }}
             >
               <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-lg bg-secondary/50 border border-border/40 flex items-center justify-center mb-3 sm:mb-6 group-hover:border-primary/40 group-hover:scale-110 group-hover:bg-primary/10 transition-all duration-500">
                 <value.icon className="w-4 h-4 sm:w-6 sm:h-6 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
               </div>
               
-              <h3 className="font-display text-[10px] xs:text-xs sm:text-lg font-semibold text-foreground mb-1.5 sm:mb-3 group-hover:text-primary transition-colors duration-300 line-clamp-2">
+              <h3 className={`font-display font-semibold text-foreground group-hover:text-primary transition-colors duration-300 ${
+                index === 2 ? "text-base sm:text-lg mb-2 sm:mb-3" : "text-[10px] xs:text-xs sm:text-lg mb-1.5 sm:mb-3 line-clamp-2"
+              }`}>
                 {value.title}
               </h3>
               
-              <p className="text-muted-foreground text-[9px] xs:text-[10px] sm:text-sm leading-relaxed line-clamp-3 sm:line-clamp-none">
+              <p className={`text-muted-foreground leading-relaxed ${
+                index === 2 ? "text-xs sm:text-sm" : "text-[9px] xs:text-[10px] sm:text-sm line-clamp-3 sm:line-clamp-none"
+              }`}>
                 {value.description}
               </p>
 
