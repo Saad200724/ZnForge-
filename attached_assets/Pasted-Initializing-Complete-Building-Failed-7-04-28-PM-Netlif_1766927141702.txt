@@ -1,0 +1,66 @@
+Initializing
+Complete
+Building
+Failed
+7:04:28 PM: Netlify Build                                                 
+7:04:28 PM: ────────────────────────────────────────────────────────────────
+7:04:28 PM: ​
+7:04:28 PM: ❯ Version
+7:04:28 PM:   @netlify/build 35.5.9
+7:04:28 PM: ​
+7:04:28 PM: ❯ Flags
+7:04:28 PM:   accountId: 6668389c498694ff45cd3229
+7:04:28 PM:   baseRelDir: true
+7:04:28 PM:   buildId: 69512ad1d57c3c975e1fb1e4
+7:04:28 PM:   deployId: 69512ad1d57c3c975e1fb1e6
+7:04:29 PM: ​
+7:04:29 PM: ❯ Current directory
+7:04:29 PM:   /opt/build/repo
+7:04:29 PM: ​
+7:04:29 PM: ❯ Config file
+7:04:29 PM:   /opt/build/repo/netlify.toml
+7:04:29 PM: ​
+7:04:29 PM: ❯ Context
+7:04:29 PM:   production
+7:04:29 PM: ​
+7:04:29 PM: ❯ Installing extensions
+7:04:29 PM:    - neon
+7:04:43 PM: ​
+7:04:43 PM: ❯ Loading extensions
+7:04:43 PM:    - neon
+7:04:44 PM: ​
+7:04:44 PM: build.command from netlify.toml                               
+7:04:44 PM: ────────────────────────────────────────────────────────────────
+7:04:44 PM: ​
+7:04:44 PM: $ npm run build
+7:04:44 PM: > vite_react_shadcn_ts@0.0.0 build
+7:04:44 PM: > vite build
+7:04:44 PM: sh: 1: vite: not found
+7:04:45 PM: Failed during stage 'building site': Build script returned non-zero exit code: 2 (https://ntl.fyi/exit-code-2)
+7:04:45 PM: ​
+7:04:45 PM: "build.command" failed                                        
+7:04:45 PM: ────────────────────────────────────────────────────────────────
+7:04:45 PM: ​
+7:04:45 PM:   Error message
+7:04:45 PM:   Command failed with exit code 127: npm run build (https://ntl.fyi/exit-code-127)
+7:04:45 PM: ​
+7:04:45 PM:   Error location
+7:04:45 PM:   In build.command from netlify.toml:
+7:04:45 PM:   npm run build
+7:04:45 PM: ​
+7:04:45 PM:   Resolved config
+7:04:45 PM:   build:
+7:04:45 PM:     command: npm run build
+7:04:45 PM:     commandOrigin: config
+7:04:45 PM:     environment:
+7:04:45 PM:       - NODE_ENV
+7:04:45 PM:     publish: /opt/build/repo/dist
+7:04:45 PM:     publishOrigin: config
+7:04:45 PM:   redirects:
+7:04:45 PM:     - from: /*
+      status: 200
+      to: /index.html
+  redirectsOrigin: config
+7:04:45 PM: Build failed due to a user error: Build script returned non-zero exit code: 2
+7:04:45 PM: Failing build: Failed to build site
+7:04:46 PM: Finished processing build request in 26.172s
