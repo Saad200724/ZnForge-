@@ -219,7 +219,9 @@ export function Pricing() {
                         <span className="font-display text-sm sm:text-3xl font-bold text-foreground">
                           {plan.price}
                         </span>
-                        <span className="text-[8px] sm:text-sm text-muted-foreground">TK</span>
+                        {plan.name !== "Custom Build" && (
+                          <span className="text-[8px] sm:text-sm text-muted-foreground">TK</span>
+                        )}
                       </div>
                     </div>
                     <Link to="/book" className="w-full">
