@@ -507,13 +507,13 @@
     background: linear-gradient(
       45deg,
       transparent 45%,
-      rgba(255, 255, 255, 0.02) 48%,
-      rgba(255, 255, 255, 0.08) 50%,
-      rgba(255, 255, 255, 0.02) 52%,
+      rgba(255, 255, 255, 0.01) 48%,
+      rgba(255, 255, 255, 0.04) 50%,
+      rgba(255, 255, 255, 0.01) 52%,
       transparent 55%
     );
     transform: rotate(45deg);
-    animation: glitter 6s infinite ease-in-out;
+    animation: glitter 8s infinite ease-in-out;
   }
 
   @keyframes glitter {
