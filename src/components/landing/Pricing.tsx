@@ -150,7 +150,9 @@ export function Pricing() {
         <div className="text-center mb-16">
           <h2 className="font-display text-display-sm sm:text-display-md font-semibold text-foreground mb-8">
             Smart Solutions For Every Stage of{" "}
-            <span className="text-gradient animate-shimmer italic">Growth</span>
+            <span className="inline-block">
+              <span className="text-gradient animate-shimmer italic pb-1">Growth</span>
+            </span>
           </h2>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 px-4">
