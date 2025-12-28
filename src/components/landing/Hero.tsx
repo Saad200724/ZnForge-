@@ -38,7 +38,7 @@ export function Hero() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center relative">
           {/* Top Left Avatar */}
-          <div className="absolute -top-12 -left-4 sm:top-[10%] sm:left-[-10%] animate-float-avatar z-20 pointer-events-none">
+          <div className="absolute -top-12 -left-4 sm:top-[10%] sm:left-[-14%] animate-float-avatar z-20 pointer-events-none">
             <img 
               src="/assets/avatar-cursor.webp" 
               alt="Avatar with cursor" 
@@ -46,7 +46,7 @@ export function Hero() {
             />
           </div>
           {/* Bottom Right Avatar */}
-          <div className="absolute -bottom-12 -right-4 sm:bottom-[10%] sm:right-[-14%] animate-float-avatar z-20 pointer-events-none" style={{ animationDelay: '3s' }}>
+          <div className="absolute -bottom-12 -right-4 sm:bottom-[10%] sm:right-[-10%] animate-float-avatar z-20 pointer-events-none" style={{ animationDelay: '3s' }}>
             <img 
               src="/assets/avatar-cursor-2.webp" 
               alt="Avatar with cursor" 
