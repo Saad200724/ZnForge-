@@ -41,13 +41,15 @@ export function Footer() {
 
               {/* Book a call button */}
               <div className="flex items-center justify-center">
-                <Button 
-                  size="lg" 
-                  className="bg-white hover:bg-white/90 text-black font-semibold px-8 h-14 text-base group hover:scale-110 transition-all duration-500 shadow-lg shadow-white/10 hover:shadow-xl hover:shadow-white/20 gap-3 tracking-[0.05em]"
-                >
-                  <img src="/icons/google-meet.png" alt="" className="w-6 h-6" />
-                  Book a call
-                </Button>
+                <Link to="/book">
+                  <Button 
+                    size="lg" 
+                    className="bg-white hover:bg-white/90 text-black font-semibold px-8 h-14 text-base group hover:scale-110 transition-all duration-500 shadow-lg shadow-white/10 hover:shadow-xl hover:shadow-white/20 gap-3 tracking-[0.05em]"
+                  >
+                    <img src="/icons/google-meet.png" alt="" className="w-6 h-6" />
+                    Book a call
+                  </Button>
+                </Link>
               </div>
             </div>
 

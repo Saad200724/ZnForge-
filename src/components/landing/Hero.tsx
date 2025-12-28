@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowRight, Github, Twitter, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroProjectPreview from "@/assets/hero-project-preview.png";
@@ -68,13 +69,15 @@ export function Hero() {
 
           {/* CTA Buttons with glow effects */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in delay-4 px-4">
-            <Button 
-              size="lg" 
-              className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 h-14 text-base group hover:scale-105 sm:hover:scale-110 transition-all duration-500 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 glow-pulse animate-glitter"
-            >
-              Start a project
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
-            </Button>
+            <Link to="/book" className="w-full sm:w-auto">
+              <Button 
+                size="lg" 
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 h-14 text-base group hover:scale-105 sm:hover:scale-110 transition-all duration-500 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 glow-pulse animate-glitter"
+              >
+                Start a project
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+              </Button>
+            </Link>
             <Button 
               size="lg" 
               variant="outline" 

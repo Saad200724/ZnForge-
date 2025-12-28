@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import znforgeLogo from "@/assets/znforge-white-logo.png";
@@ -59,10 +60,12 @@ export function Navbar() {
           </div>
 
           {/* CTA Button - Always visible */}
-          <Button className="bg-foreground hover:bg-foreground/90 text-background font-medium px-3 sm:px-4 h-10 sm:h-10 rounded-lg text-xs sm:text-sm group flex-shrink-0 gap-2">
-            <img src="/icons/google-meet.png" alt="" className="w-4 h-4" />
-            <span className="">Book a call</span>
-          </Button>
+          <Link to="/book">
+            <Button className="bg-foreground hover:bg-foreground/90 text-background font-medium px-3 sm:px-4 h-10 sm:h-10 rounded-lg text-xs sm:text-sm group flex-shrink-0 gap-2">
+              <img src="/icons/google-meet.png" alt="" className="w-4 h-4" />
+              <span className="">Book a call</span>
+            </Button>
+          </Link>
         </div>
       </div>
     </nav>
