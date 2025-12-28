@@ -21,13 +21,13 @@ export function Footer() {
             {/* Brand & Social Section */}
             <div className="flex flex-col items-center text-center space-y-12">
               {/* Logo */}
-              <a href="#" className="inline-flex items-center hover:opacity-80 transition-opacity duration-300">
+              <Link to="/" className="inline-flex items-center hover:opacity-80 transition-opacity duration-300">
                 <img 
                   src={znforgeLogo} 
                   alt="ZnForge" 
                   className="h-16 w-auto"
                 />
-              </a>
+              </Link>
 
               {/* Brand Description */}
               <div className="max-w-2xl mx-auto space-y-6">

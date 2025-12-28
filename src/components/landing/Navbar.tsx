@@ -34,20 +34,20 @@ export function Navbar() {
           }`}
         >
           {/* Logo */}
-          <a href="#" className="flex items-center group flex-shrink-0">
+          <Link to="/" className="flex items-center group flex-shrink-0">
             <img
               src={znforgeLogo}
               alt="ZnForge"
               className="h-12 sm:h-14 w-auto transition-transform group-hover:scale-105"
             />
-          </a>
+          </Link>
 
           {/* Navigation - Always visible */}
           <div className="flex items-center">
             {navLinks.map((link, index) => (
               <div key={link.label} className="flex items-center">
                 <a
-                  href={link.href}
+                  href={link.href.startsWith("#") ? `/${link.href}` : link.href}
                   className="px-2 sm:px-3 text-muted-foreground hover:text-foreground transition-colors text-xs sm:text-sm font-medium uppercase tracking-wide"
                 >
                   {link.label}
