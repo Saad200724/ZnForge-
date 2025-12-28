@@ -1,9 +1,9 @@
 [build]
   publish = "dist"
-  command = "npm run build"
+  command = "npx vite build"
 
 [context.production]
-  environment = { NODE_ENV = "production" }
+  environment = { NODE_ENV = "production", NPM_FLAGS = "--include=dev" }
 
 [[redirects]]
   from = "/*"

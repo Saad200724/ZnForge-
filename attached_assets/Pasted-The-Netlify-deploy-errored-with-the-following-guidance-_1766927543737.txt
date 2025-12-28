@@ -1,0 +1,119 @@
+The Netlify deploy errored, with the following guidance provided:
+
+Diagnosis
+- The build failed because the Vite binary could not be found when Netlify ran the build. See the failed build command and the error: [line 60](#L60) — [line 63](#L63).
+- This normally happens when the package providing the "vite" CLI is not installed in the environment Netlify used for the build (either vite is not listed in package.json, or Netlify omitted devDependencies during install so vite wasn't installed).
+
+Required verification (do this first)
+1. Verify that vite is listed in your repository's package.json (devDependencies or dependencies). Example file in your repo: https://github.com/Saad200724/ZnForge-/blob/main/package.json
+2. Verify package.json and package-lock.json (or yarn.lock) were committed to the repo.
+
+Solution (pick one of the options below depending on what you find)
+
+Option A — vite is missing from package.json
+- Add vite to your project (as a dev dependency is typical):
+```bash
+# from your project root (locally)
+npm install --save-dev vite
+git add package.json package-lock.json
+git commit -m "Add vite"
+git push
+```
+- Re-deploy on Netlify.
+
+Option B — vite is present in devDependencies but Netlify skipped devDependencies
+- Netlify can skip devDependencies if NODE_ENV=production or install flags omit dev deps. To make Netlify install devDependencies, add this to netlify.toml (or set the NPM_FLAGS env var in Netlify UI):
+```toml
+[build.environment]
+  NPM_FLAGS = "--include=dev"
+```
+- Commit netlify.toml (if you change it) and redeploy. This keeps vite as a devDependency while ensuring it's installed during the build.
+
+Option C — Move vite to regular dependencies (quick fix)
+- If you prefer to ensure vite is always installed, install it as a dependency:
+```bash
+npm install --save vite
+git add package.json package-lock.json
+git commit -m "Move vite to dependencies"
+git push
+```
+- Re-deploy.
+
+Quick temporary workaround
+- Change your build command in netlify.toml to use npx so it will fetch and run vite even if not locally installed:
+```toml
+[build]
+  command = "npx vite build"
+```
+This is not recommended long-term (adds network fetch at build time); better to add/enable the dependency as above.
+
+Why this fixes it
+- The error ("vite: not found") means Netlify's environment couldn't find the vite CLI binary. Ensuring the package is present in package.json and that Netlify installs devDependencies (or moving vite into dependencies) makes the vite binary available during the build.
+
+If you discover the issue is actually a Node version mismatch, update Netlify's Node version per Netlify docs: https://docs.netlify.com/configure-builds/manage-dependencies/#node-js-and-javascript
+
+The relevant error logs are:
+
+Line 0: build-image version: 4eb552cf97517bc57f136e719a1cf73a7f3cefbb (noble)
+Line 1: buildbot version: 4eb552cf97517bc57f136e719a1cf73a7f3cefbb
+Line 2: Fetching cached dependencies
+Line 3: Failed to fetch cache, continuing with build
+Line 4: Starting to prepare the repo for build
+Line 5: No cached dependencies found. Cloning fresh repo
+Line 6: git clone --filter=blob:none https://github.com/Saad200724/ZnForge-
+Line 7: Preparing Git Reference refs/heads/main
+Line 8: Starting to install dependencies
+Line 9: v22.21.1 is already installed.
+Line 10: Now using node v22.21.1 (npm v10.9.4)
+Line 11: Enabling Node.js Corepack
+Line 12: Started restoring cached build plugins
+Line 13: Finished restoring cached build plugins
+Line 42:   /opt/build/repo
+Line 43: [36m[1m​[22m[39m
+Line 44: [36m[1m❯ Config file[22m[39m
+Line 45:   /opt/build/repo/netlify.toml
+Line 46: [36m[1m​[22m[39m
+Line 47: [36m[1m❯ Context[22m[39m
+Line 48:   production
+Line 49: [36m[1m​[22m[39m
+Line 50: [36m[1m❯ Installing extensions[22m[39m
+Line 51:    - neon
+Line 52: Failed during stage 'building site': Build script returned non-zero exit code: 2
+Line 53: [36m[1m​[22m[39m
+Line 54: [36m[1m❯ Loading extensions[22m[39m
+Line 55:    - neon
+Line 56: [96m[1m​[22m[39m
+Line 57: [96m[1mbuild.command from netlify.toml                               [22m[39m
+Line 58: [96m[1m────────────────────────────────────────────────────────────────[22m[39m
+Line 59: ​
+Line 60: [36m$ npm run build[39m
+Line 61: > vite_react_shadcn_ts@0.0.0 build
+Line 62: > vite build
+Line 63: sh: 1: vite: not found
+Line 64: [91m[1m​[22m[39m
+Line 65: [91m[1m"build.command" failed                                        [22m[39m
+Line 66: [91m[1m────────────────────────────────────────────────────────────────[22m[39m
+Line 67: ​
+Line 68:   [31m[1mError message[22m[39m
+Line 69:   Command failed with exit code 127: npm run build
+Line 70: ​
+Line 71:   [31m[1mError location[22m[39m
+Line 72:   In build.command from netlify.toml:
+Line 73:   npm run build
+Line 74: ​
+Line 75:   [31m[1mResolved config[22m[39m
+Line 76:   build:
+Line 77:     command: npm run build
+Line 78:     commandOrigin: config
+Line 79:     environment:
+Line 80:       - NODE_ENV
+Line 81:     publish: /opt/build/repo/dist
+Line 82:     publishOrigin: config
+Line 83:   redirects:
+Line 84:     - from: /*
+      status: 200
+      to: /index.html
+  redirectsOrigin: config
+Line 85: Build failed due to a user error: Build script returned non-zero exit code: 2
+Line 86: Failing build: Failed to build site
+Line 87: Finished processing build request in 26.781s
