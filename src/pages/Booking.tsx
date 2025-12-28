@@ -40,11 +40,13 @@ export default function Booking() {
         </div>
       </main>
       
-      {/* Simple Footer for Booking Page */}
-      <footer className="border-t border-border/40 py-8 bg-background/50 backdrop-blur-sm">
-        <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <p>© {currentYear} ZnForge. All rights reserved.</p>
-        </div>
+      {/* Minimal Footer for Booking Page */}
+      <footer className="relative w-full flex justify-center pointer-events-none overflow-hidden py-12">
+        <span className="font-display text-[8rem] sm:text-[10rem] md:text-[12rem] font-bold leading-none select-none whitespace-nowrap text-foreground/[0.04] animate-pulse">
+          ZnForge
+        </span>
+        {/* Fade overlay */}
+        <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-background to-transparent" />
       </footer>
     </div>
   );
