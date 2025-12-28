@@ -56,9 +56,9 @@ export function Hero() {
 
           {/* Main Headline with shimmer effect */}
           <h1 className="font-display text-3xl sm:text-display-md lg:text-display-xl font-bold text-foreground mb-6 animate-in delay-2 leading-[1.1]">
-            Build Your Own Software,
+            Custom <span className="text-primary">Software Development</span> Agency for Startups & Enterprises,
             <br />
-            <span className="text-gradient animate-shimmer">Even If You Don't Have A Development Team</span>
+            <span className="text-gradient animate-shimmer">Build Your Product Without a Dev Team</span>
           </h1>
 
           {/* Subheadline */}

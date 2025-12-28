@@ -7,26 +7,26 @@ import webappImg from "@/assets/service-webapp.png";
 const services = [
   {
     icon: Palette,
-    title: "Brand Design",
-    description: "Complete brand identity including logos, colour palettes, and comprehensive design systems.",
+    title: "UI/UX Design & Branding",
+    description: "Expert brand identity design, high-fidelity UI/UX, and comprehensive design systems for modern digital products.",
     image: brandDesignImg,
   },
   {
     icon: Globe,
-    title: "Web Development",
-    description: "Fast, responsive, and scalable websites built with modern technologies.",
+    title: "Custom Web Development",
+    description: "Enterprise-grade, fast, and scalable websites built with React, Next.js, and modern tech stacks.",
     image: webDevImg,
   },
   {
     icon: Rocket,
-    title: "SaaS & Startup Development",
-    description: "End-to-end product development for startups and SaaS platforms that scale.",
+    title: "SaaS Product Development",
+    description: "Scalable SaaS architecture and startup MVP development focused on growth and user retention.",
     image: saasImg,
   },
   {
     icon: Smartphone,
-    title: "Web App Development",
-    description: "Powerful web applications with intuitive interfaces and seamless user experiences.",
+    title: "Web Application Development",
+    description: "Powerful, interactive web applications with cloud-native backends and seamless user interfaces.",
     image: webappImg,
   },
 ];
