@@ -26,7 +26,7 @@ const membershipPlans: PricingPlan[] = [
       "Weekly Analytics",
       "Basic Automation",
     ],
-    buttonText: "Get Started",
+    buttonText: "Silver",
     popular: false,
   },
   {
@@ -139,58 +139,10 @@ const projectPlans: PricingPlan[] = [
   },
 ];
 
-const sourceCodePlans: PricingPlan[] = [
-  {
-    name: "Bronze",
-    subtitle: "Basic source code access",
-    price: "15,000",
-    previousPrice: null,
-    features: [
-      "Core Module Access",
-      "Standard Documentation",
-      "One-time Update",
-      "Basic Integration Guide",
-    ],
-    buttonText: "Purchase",
-    popular: false,
-  },
-  {
-    name: "Silver",
-    subtitle: "Advanced source code package",
-    price: "25,000",
-    previousPrice: null,
-    features: [
-      "All Module Access",
-      "Priority Documentation",
-      "Lifetime Updates",
-      "Full Integration Support",
-    ],
-    buttonText: "Purchase",
-    popular: true,
-  },
-  {
-    name: "Platinum",
-    subtitle: "Enterprise source code license",
-    price: "50,000",
-    previousPrice: null,
-    features: [
-      "Exclusive Custom Modules",
-      "Dedicated Dev Support",
-      "White-label License",
-      "Priority Feature Requests",
-    ],
-    buttonText: "Purchase",
-    popular: false,
-  },
-];
-
 export function Pricing() {
-  const [pricingType, setPricingType] = useState<"membership" | "project" | "sourceCode">("membership");
+  const [pricingType, setPricingType] = useState<"membership" | "project">("membership");
 
-  const activePlans = 
-    pricingType === "membership" ? membershipPlans : 
-    pricingType === "project" ? projectPlans : 
-    sourceCodePlans;
+  const activePlans = pricingType === "membership" ? membershipPlans : projectPlans;
 
   return (
     <section id="pricing" className="py-24 lg:py-32 border-t border-border/40 overflow-hidden">
@@ -221,15 +173,6 @@ export function Pricing() {
               }`}
             >
               Project Based
-            </Button>
-            <Button
-              variant={pricingType === "sourceCode" ? "default" : "outline"}
-              onClick={() => setPricingType("sourceCode")}
-              className={`w-full sm:w-auto rounded-full px-8 py-6 text-base sm:text-lg transition-all duration-300 ${
-                pricingType === "sourceCode" ? "shadow-lg shadow-primary/20" : ""
-              }`}
-            >
-              Source Code
             </Button>
           </div>
         </div>
@@ -288,12 +231,11 @@ export function Pricing() {
                             : "bg-muted/50 hover:bg-primary text-foreground hover:text-primary-foreground border border-border/60 hover:border-primary"
                         }`}
                       >
-                        {plan.buttonText === "Get Started" ? "Silver" : 
+                        {plan.buttonText === "Silver" ? "Silver" : 
                          plan.buttonText === "Choose Gold" ? "Gold" :
                          plan.buttonText === "Go Platinum" ? "Platinum" :
                          plan.buttonText === "Contact Sales" ? "Sales" : 
-                         plan.buttonText === "Start Project" ? "Start" : 
-                         plan.buttonText === "Purchase" ? "Silver" : "Quote"}
+                         plan.buttonText === "Start Project" ? "Start" : "Quote"}
                       </Button>
                     </Link>
                 </div>
