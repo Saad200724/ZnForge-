@@ -152,11 +152,11 @@ export function Pricing() {
             <span className="text-gradient animate-shimmer italic">Growth</span>
           </h2>
 
-          <div className="flex items-center justify-center gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 px-4">
             <Button
               variant={pricingType === "membership" ? "default" : "outline"}
               onClick={() => setPricingType("membership")}
-              className={`rounded-full px-8 py-6 text-lg transition-all duration-300 ${
+              className={`w-full sm:w-auto rounded-full px-8 py-6 text-base sm:text-lg transition-all duration-300 ${
                 pricingType === "membership" ? "shadow-lg shadow-primary/20" : ""
               }`}
             >
@@ -165,7 +165,7 @@ export function Pricing() {
             <Button
               variant={pricingType === "project" ? "default" : "outline"}
               onClick={() => setPricingType("project")}
-              className={`rounded-full px-8 py-6 text-lg transition-all duration-300 ${
+              className={`w-full sm:w-auto rounded-full px-8 py-6 text-base sm:text-lg transition-all duration-300 ${
                 pricingType === "project" ? "shadow-lg shadow-primary/20" : ""
               }`}
             >
@@ -174,7 +174,7 @@ export function Pricing() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto items-stretch px-4">
           {activePlans.map((plan) => (
             <div
               key={plan.name}
