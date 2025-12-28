@@ -60,9 +60,7 @@ export function Navbar() {
 
           {/* CTA Button - Always visible */}
           <Button className="bg-foreground hover:bg-foreground/90 text-background font-medium px-3 sm:px-4 h-10 sm:h-10 rounded-lg text-xs sm:text-sm group flex-shrink-0">
-            <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1 sm:mr-1.5" />
-            <span className="hidden sm:inline">Start now</span>
-            <span className="sm:hidden">Start</span>
+            <span className="">Book a call</span>
           </Button>
         </div>
       </div>

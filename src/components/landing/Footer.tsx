@@ -1,21 +1,6 @@
-import { Twitter, Instagram, Linkedin, Github } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import znforgeLogo from "@/assets/znforge-white-logo.png";
-
-const socialLinks = [
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Github, href: "#", label: "GitHub" },
-];
-
-const footerPages = [
-  { label: "Make", href: "/make" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-  { label: "Career", href: "/career" },
-  { label: "Working Procedure", href: "/working-procedure" },
-];
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -54,22 +39,14 @@ export function Footer() {
                 </p>
               </div>
 
-              {/* Social Links - Fancy Icons */}
-              <div className="flex items-center justify-center gap-8">
-                {socialLinks.map((social) => {
-                  const Icon = social.icon;
-                  return (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      aria-label={social.label}
-                      className="group relative w-12 h-12 flex items-center justify-center rounded-full border border-border/40 text-muted-foreground hover:text-primary hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
-                    >
-                      <Icon className="w-5 h-5" />
-                      <div className="absolute inset-0 rounded-full bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
-                    </a>
-                  );
-                })}
+              {/* Book a call button */}
+              <div className="flex items-center justify-center">
+                <Button 
+                  size="lg" 
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 h-14 text-base group hover:scale-110 transition-all duration-500 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50"
+                >
+                  Book a call
+                </Button>
               </div>
             </div>
 
