@@ -1,6 +1,7 @@
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 interface PricingPlan {
   name: string;
@@ -217,15 +218,17 @@ export function Pricing() {
                         </span>
                       </div>
                     </div>
-                  <Button
-                    className={`w-full rounded-lg py-5 font-medium transition-all duration-300 ${
-                      plan.popular
-                        ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/30"
-                        : "bg-muted/50 hover:bg-primary text-foreground hover:text-primary-foreground border border-border/60 hover:border-primary"
-                    }`}
-                  >
-                    {plan.buttonText}
-                  </Button>
+                    <Link to="/book" className="w-full">
+                      <Button
+                        className={`w-full rounded-lg py-5 font-medium transition-all duration-300 ${
+                          plan.popular
+                            ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/30"
+                            : "bg-muted/50 hover:bg-primary text-foreground hover:text-primary-foreground border border-border/60 hover:border-primary"
+                        }`}
+                      >
+                        {plan.buttonText}
+                      </Button>
+                    </Link>
                 </div>
               </div>
             </div>

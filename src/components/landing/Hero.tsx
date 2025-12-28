@@ -78,13 +78,15 @@ export function Hero() {
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
               </Button>
             </Link>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="w-full sm:w-auto border-2 border-foreground/20 bg-transparent hover:bg-foreground hover:text-background px-8 h-14 text-base font-semibold hover:scale-105 sm:hover:scale-110 transition-all duration-500 hover:shadow-xl"
-            >
-              View our work
-            </Button>
+            <a href="#work" className="w-full sm:w-auto">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="w-full sm:w-auto border-2 border-foreground/20 bg-transparent hover:bg-foreground hover:text-background px-8 h-14 text-base font-semibold hover:scale-105 sm:hover:scale-110 transition-all duration-500 hover:shadow-xl"
+              >
+                View our work
+              </Button>
+            </a>
           </div>
         </div>
 

@@ -42,7 +42,7 @@ const projects = [
 
 export function Portfolio() {
   return (
-    <section id="work" className="py-24 lg:py-32 bg-background">
+    <section id="work" className="py-24 lg:py-32 bg-background scroll-mt-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
