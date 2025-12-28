@@ -21,10 +21,10 @@ export default function Career() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <h1 className="font-display text-5xl sm:text-6xl font-bold text-foreground">
-              Join Our Team
+              Build the Future With Us
             </h1>
             <p className="text-xl text-muted-foreground">
-              Be part of a team creating exceptional digital experiences. We're looking for talented individuals who are passionate about excellence.
+              Explore rewarding career opportunities at our forward-thinking digital agency. We're looking for passionate innovators to join our growing team.
             </p>
           </div>
         </div>
@@ -61,28 +61,40 @@ export default function Career() {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-foreground mb-12">Open Positions</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-12">Available Opportunities</h2>
             <div className="space-y-4">
-              {positions.map((job, i) => (
-                <div key={i} className="p-6 rounded-xl border border-border/40 bg-card hover:border-primary/50 transition-all duration-300 group hover:shadow-lg hover:shadow-primary/10">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                    <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">{job.title}</h3>
-                      <div className="flex flex-wrap gap-4 mt-2">
-                        <span className="text-sm text-muted-foreground flex items-center gap-1">
-                          <Briefcase className="w-4 h-4" />
-                          {job.department}
-                        </span>
-                        <span className="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full">{job.level}</span>
-                        <span className="text-sm text-muted-foreground">{job.location}</span>
+              {positions.length > 0 ? (
+                positions.map((job, i) => (
+                  <div key={i} className="p-6 rounded-xl border border-border/40 bg-card hover:border-primary/50 transition-all duration-300 group hover:shadow-lg hover:shadow-primary/10">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">{job.title}</h3>
+                        <div className="flex flex-wrap gap-4 mt-2">
+                          <span className="text-sm text-muted-foreground flex items-center gap-1">
+                            <Briefcase className="w-4 h-4" />
+                            {job.department}
+                          </span>
+                          <span className="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full">{job.level}</span>
+                          <span className="text-sm text-muted-foreground">{job.location}</span>
+                        </div>
                       </div>
+                      <Button variant="outline" className="group-hover:border-primary group-hover:text-primary">
+                        Apply Now <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
                     </div>
-                    <Button variant="outline" className="group-hover:border-primary group-hover:text-primary">
-                      Apply <ArrowRight className="ml-2 w-4 h-4" />
-                    </Button>
                   </div>
+                ))
+              ) : (
+                <div className="p-12 rounded-2xl border border-dashed border-border/60 bg-card/50 text-center">
+                  <h3 className="text-xl font-semibold text-foreground mb-4">No Current Openings</h3>
+                  <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
+                    While we don't have any specific roles open at the moment, we're always looking for exceptional talent. Feel free to send your resume for future consideration.
+                  </p>
+                  <Button className="rounded-full px-8">
+                    Send General Application
+                  </Button>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </div>
