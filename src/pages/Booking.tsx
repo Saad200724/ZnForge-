@@ -30,10 +30,10 @@ export default function Booking() {
           </p>
         </div>
         
-        <div className="rounded-2xl border border-border/40 bg-card/20 backdrop-blur-sm overflow-hidden min-h-[700px] flex items-center justify-center">
+        <div className="rounded-2xl border border-border/40 bg-card/20 backdrop-blur-sm overflow-hidden min-h-[800px] flex items-center justify-center">
           <Cal
             calLink="znforge/consultation"
-            style={{ width: "100%", height: "100%", minHeight: "700px" }}
+            style={{ width: "100%", height: "800px" }}
             config={ { layout: "month_view", theme: "dark" } }
           />
         </div>
