@@ -1,5 +1,1 @@
-/*
-  Redirect all requests to index.html
-  This handles client-side routing for Single Page Applications (SPA)
-*/
-/*  200
+/*    /index.html   200
