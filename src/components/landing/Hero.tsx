@@ -45,6 +45,13 @@ export function Hero() {
               className="w-32 h-32 sm:w-40 sm:h-40 object-contain drop-shadow-2xl"
             />
           </div>
+          <div className="absolute bottom-[20%] right-[5%] sm:right-[10%] animate-float-avatar z-20 pointer-events-none" style={{ animationDelay: '3s' }}>
+            <img 
+              src="/assets/avatar-cursor-2.webp" 
+              alt="Avatar with cursor" 
+              className="w-32 h-32 sm:w-40 sm:h-40 object-contain drop-shadow-2xl"
+            />
+          </div>
 
           {/* Main Headline with shimmer effect */}
           <h1 className="font-display text-display-md sm:text-display-lg lg:text-display-xl font-bold text-foreground mb-6 animate-in delay-2">
