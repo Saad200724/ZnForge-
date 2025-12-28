@@ -493,6 +493,43 @@
     animation: countUp 1.5s ease-out forwards;
   }
 
+  .animate-glitter {
+    position: relative;
+    overflow: hidden;
+  }
+  .animate-glitter::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent 45%,
+      rgba(255, 255, 255, 0.1) 48%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0.1) 52%,
+      transparent 55%
+    );
+    transform: rotate(45deg);
+    animation: glitter 3s infinite;
+  }
+
+  @keyframes glitter {
+    0% { transform: translate(-100%, -100%) rotate(45deg); }
+    100% { transform: translate(100%, 100%) rotate(45deg); }
+  }
+
+  @keyframes float-profile-avatar {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(2deg); }
+  }
+
+  .animate-float-avatar {
+    animation: float-profile-avatar 6s ease-in-out infinite;
+  }
+
   /* Shake attention */
   .animate-shake {
     animation: shake 0.5s ease-in-out;

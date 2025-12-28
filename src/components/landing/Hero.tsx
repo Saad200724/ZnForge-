@@ -38,57 +38,12 @@ export function Hero() {
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center relative">
-          {/* Animated Floating Profiles with Cursor Pointers */}
-          {/* Top Left Profile */}
-          <div className="absolute -top-20 -left-32 sm:-left-40 animate-float-profile-1">
-            <div className="relative">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-primary/60 to-primary/40 border-2 border-primary/50 flex items-center justify-center overflow-hidden shadow-lg">
-                <div className="w-full h-full bg-gradient-to-br from-blue-400 to-cyan-400" />
-              </div>
-              <svg className="absolute -right-3 -bottom-3 w-6 h-6 animate-cursor-point text-primary" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3 3v15h15V3H3zm2 2h11v11H5V5z" />
-                <path d="M7 7l6 6 2-2v4H9z" opacity="0.7" />
-              </svg>
-            </div>
-          </div>
-
-          {/* Top Right Profile */}
-          <div className="absolute -top-16 -right-32 sm:-right-40 animate-float-profile-2">
-            <div className="relative">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-primary/60 to-primary/40 border-2 border-primary/50 flex items-center justify-center overflow-hidden shadow-lg">
-                <div className="w-full h-full bg-gradient-to-br from-purple-400 to-pink-400" />
-              </div>
-              <svg className="absolute -left-3 -bottom-3 w-6 h-6 animate-cursor-point text-primary" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3 3v15h15V3H3zm2 2h11v11H5V5z" />
-                <path d="M17 7l-6 6-2-2v4h4z" opacity="0.7" />
-              </svg>
-            </div>
-          </div>
-
-          {/* Middle Left Profile */}
-          <div className="absolute top-1/2 -left-36 sm:-left-44 -translate-y-1/2 animate-float-profile-3">
-            <div className="relative">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-primary/60 to-primary/40 border-2 border-primary/50 flex items-center justify-center overflow-hidden shadow-lg">
-                <div className="w-full h-full bg-gradient-to-br from-green-400 to-emerald-400" />
-              </div>
-              <svg className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 animate-cursor-point text-primary" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3 3v15h15V3H3zm2 2h11v11H5V5z" />
-                <path d="M7 11l6-6 2 2v-4h-4z" opacity="0.7" />
-              </svg>
-            </div>
-          </div>
-
-          {/* Middle Right Profile */}
-          <div className="absolute top-1/2 -right-36 sm:-right-44 -translate-y-1/2 animate-float-profile-4">
-            <div className="relative">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-primary/60 to-primary/40 border-2 border-primary/50 flex items-center justify-center overflow-hidden shadow-lg">
-                <div className="w-full h-full bg-gradient-to-br from-orange-400 to-red-400" />
-              </div>
-              <svg className="absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 animate-cursor-point text-primary" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3 3v15h15V3H3zm2 2h11v11H5V5z" />
-                <path d="M17 11l-6-6-2 2v-4h4z" opacity="0.7" />
-              </svg>
-            </div>
+          <div className="absolute top-[20%] left-[5%] sm:left-[10%] animate-float-avatar z-20 pointer-events-none">
+            <img 
+              src="/assets/avatar-cursor.webp" 
+              alt="Avatar with cursor" 
+              className="w-32 h-32 sm:w-40 sm:h-40 object-contain drop-shadow-2xl"
+            />
           </div>
 
           {/* Main Headline with shimmer effect */}
@@ -108,7 +63,7 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in delay-4">
             <Button 
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 h-14 text-base group hover:scale-110 transition-all duration-500 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 glow-pulse"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 h-14 text-base group hover:scale-110 transition-all duration-500 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 glow-pulse animate-glitter"
             >
               Start a project
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
