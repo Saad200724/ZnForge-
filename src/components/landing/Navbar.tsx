@@ -23,11 +23,11 @@ export function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 pt-4 px-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 pt-2 sm:pt-4 px-2 sm:px-4">
       <div className="max-w-2xl mx-auto">
         {/* Floating Container */}
         <div
-          className={`flex items-center justify-between px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl transition-all duration-500 ${
+          className={`flex items-center justify-between px-2 sm:px-5 py-2 sm:py-3 rounded-xl transition-all duration-500 ${
             scrolled
               ? "bg-background/95 backdrop-blur-xl shadow-lg shadow-black/5 border border-border/50"
               : "bg-background/90 backdrop-blur-md shadow-md shadow-black/5 border border-border/30"
@@ -38,22 +38,22 @@ export function Navbar() {
             <img
               src={znforgeLogo}
               alt="ZnForge"
-              className="h-12 sm:h-14 w-auto transition-transform group-hover:scale-105"
+              className="h-8 sm:h-14 w-auto transition-transform group-hover:scale-105"
             />
           </Link>
 
           {/* Navigation - Always visible */}
-          <div className="flex items-center">
+          <div className="flex items-center gap-1 sm:gap-0">
             {navLinks.map((link, index) => (
               <div key={link.label} className="flex items-center">
                 <a
                   href={link.href.startsWith("#") ? `/${link.href}` : link.href}
-                  className="px-2 sm:px-3 text-muted-foreground hover:text-foreground transition-colors text-xs sm:text-sm font-medium uppercase tracking-wide"
+                  className="px-1.5 sm:px-3 text-muted-foreground hover:text-foreground transition-colors text-[10px] sm:text-sm font-medium uppercase tracking-tight sm:tracking-wide"
                 >
                   {link.label}
                 </a>
                 {index < navLinks.length - 1 && (
-                  <div className="w-px h-3 sm:h-4 bg-border/60 hidden sm:block" />
+                  <div className="w-px h-2.5 sm:h-4 bg-border/60" />
                 )}
               </div>
             ))}
@@ -61,9 +61,10 @@ export function Navbar() {
 
           {/* CTA Button - Always visible */}
           <Link to="/book">
-            <Button className="bg-foreground hover:bg-foreground/90 text-background font-medium px-3 sm:px-4 h-10 sm:h-10 rounded-lg text-xs sm:text-sm group flex-shrink-0 gap-2">
-              <img src="/icons/google-meet.png" alt="" className="w-4 h-4" />
-              <span className="">Book a call</span>
+            <Button className="bg-foreground hover:bg-foreground/90 text-background font-medium px-2 sm:px-4 h-8 sm:h-10 rounded-lg text-[10px] sm:text-sm group flex-shrink-0 gap-1 sm:gap-2">
+              <img src="/icons/google-meet.png" alt="" className="w-3 h-3 sm:w-4 sm:h-4" />
+              <span className="hidden xs:inline">Book a call</span>
+              <span className="xs:hidden">Book</span>
             </Button>
           </Link>
         </div>

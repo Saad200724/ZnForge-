@@ -175,58 +175,66 @@ export function Pricing() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto items-stretch px-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 max-w-7xl mx-auto items-stretch px-2 sm:px-4">
           {activePlans.map((plan) => (
             <div
               key={plan.name}
-              className="group relative rounded-2xl border border-border/60 bg-card/20 backdrop-blur-sm hover:border-primary/30 transition-all duration-500 hover:shadow-lg hover:shadow-primary/5 flex flex-col h-full"
+              className="group relative rounded-xl sm:rounded-2xl border border-border/60 bg-card/20 backdrop-blur-sm hover:border-primary/30 transition-all duration-500 hover:shadow-lg hover:shadow-primary/5 flex flex-col h-full"
             >
               {/* Subtle glow effect on hover */}
-              <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-b from-primary/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+              <div className="absolute -inset-[1px] rounded-xl sm:rounded-2xl bg-gradient-to-b from-primary/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
               
               {/* Features section */}
-              <div className="p-6 flex-1">
-                <p className="text-sm font-medium text-muted-foreground mb-4">What you will get</p>
-                <ul className="space-y-3">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-primary transition-all duration-300">
-                        <Check className="w-3 h-3 text-primary group-hover:text-primary-foreground transition-colors" />
+              <div className="p-3 sm:p-6 flex-1">
+                <p className="text-[10px] sm:text-sm font-medium text-muted-foreground mb-2 sm:mb-4 uppercase tracking-tighter sm:tracking-normal">Included</p>
+                <ul className="space-y-2 sm:space-y-3">
+                  {plan.features.slice(0, 3).map((feature) => (
+                    <li key={feature} className="flex items-start gap-1.5 sm:gap-3">
+                      <div className="w-3.5 h-3.5 sm:w-5 sm:h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-primary transition-all duration-300">
+                        <Check className="w-2 h-2 sm:w-3 sm:h-3 text-primary group-hover:text-primary-foreground transition-colors" />
                       </div>
-                      <span className="text-sm text-foreground">{feature}</span>
+                      <span className="text-[10px] sm:text-sm text-foreground line-clamp-1">{feature}</span>
                     </li>
                   ))}
+                  {plan.features.length > 3 && (
+                    <li className="text-[9px] sm:text-xs text-muted-foreground italic">+ {plan.features.length - 3} more</li>
+                  )}
                 </ul>
               </div>
 
               {/* Bottom section - Plan info and button */}
-              <div className="p-6 pt-0">
-                <div className="border-t border-border/40 pt-6">
-                  <h3 className="font-display text-lg font-semibold text-primary mb-1">
+              <div className="p-3 sm:p-6 pt-0">
+                <div className="border-t border-border/40 pt-3 sm:pt-6">
+                  <h3 className="font-display text-sm sm:text-lg font-semibold text-primary mb-0.5 sm:mb-1">
                     {plan.name}
                   </h3>
-                  <p className="text-sm text-muted-foreground mb-4 line-clamp-2 h-10">{plan.subtitle}</p>
-                    <div className="mb-6 h-12 flex flex-col justify-end">
+                  <p className="hidden sm:block text-sm text-muted-foreground mb-4 line-clamp-2 h-10">{plan.subtitle}</p>
+                    <div className="mb-3 sm:mb-6 h-8 sm:h-12 flex flex-col justify-end">
                       {plan.previousPrice && (
-                        <span className="text-sm font-medium line-through decoration-[#299666]/50 block text-[#299666]">
-                          {plan.previousPrice} TK
+                        <span className="text-[9px] sm:text-sm font-medium line-through decoration-[#299666]/50 block text-[#299666]">
+                          {plan.previousPrice}
                         </span>
                       )}
-                      <div className="flex items-baseline gap-1">
-                        <span className="font-display text-3xl font-bold text-foreground">
-                          {plan.price} TK
+                      <div className="flex items-baseline gap-0.5 sm:gap-1">
+                        <span className="font-display text-sm sm:text-3xl font-bold text-foreground">
+                          {plan.price}
                         </span>
+                        <span className="text-[8px] sm:text-sm text-muted-foreground">TK</span>
                       </div>
                     </div>
                     <Link to="/book" className="w-full">
                       <Button
-                        className={`w-full rounded-lg py-5 font-medium transition-all duration-300 ${
+                        className={`w-full rounded-md sm:rounded-lg h-8 sm:h-12 py-0 sm:py-5 text-[10px] sm:text-sm font-medium transition-all duration-300 ${
                           plan.popular
                             ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/30"
                             : "bg-muted/50 hover:bg-primary text-foreground hover:text-primary-foreground border border-border/60 hover:border-primary"
                         }`}
                       >
-                        {plan.buttonText}
+                        {plan.buttonText === "Get Started" ? "Get" : 
+                         plan.buttonText === "Choose Gold" ? "Gold" :
+                         plan.buttonText === "Go Platinum" ? "Platinum" :
+                         plan.buttonText === "Contact Sales" ? "Sales" : 
+                         plan.buttonText === "Start Project" ? "Start" : "Quote"}
                       </Button>
                     </Link>
                 </div>

@@ -27,7 +27,7 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-24 sm:pt-40 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center pt-32 sm:pt-40 overflow-hidden">
       {/* Premium Animated Background */}
       <div className="absolute inset-0 bg-grid" />
       <div className="absolute inset-0 bg-radial animate-gradient" />

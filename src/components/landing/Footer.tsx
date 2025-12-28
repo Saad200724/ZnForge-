@@ -146,8 +146,8 @@ export function Footer() {
         </div>
 
         {/* Watermark Background Text */}
-        <div className="relative w-full flex justify-center pointer-events-none overflow-hidden pb-8">
-          <span className="font-display text-[10rem] sm:text-[12rem] md:text-[16rem] font-bold leading-none select-none whitespace-nowrap text-foreground/[0.04] animate-pulse">
+        <div className="relative w-full flex justify-center pointer-events-none overflow-hidden pb-8 px-4">
+          <span className="font-display text-[4rem] xs:text-[6rem] sm:text-[12rem] md:text-[16rem] font-bold leading-none select-none whitespace-nowrap text-foreground/[0.04] animate-pulse">
             ZnForge
           </span>
           {/* Fade overlay */}
