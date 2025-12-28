@@ -4,12 +4,7 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 
 export default function Career() {
-  const positions = [
-    { title: "Senior Product Designer", department: "Design", level: "Senior", location: "San Francisco" },
-    { title: "Full Stack Developer", department: "Engineering", level: "Mid", location: "Remote" },
-    { title: "Product Manager", department: "Product", level: "Lead", location: "San Francisco" },
-    { title: "UI/UX Designer", department: "Design", level: "Junior", location: "Remote" }
-  ];
+  const positions = [];
 
   return (
     <div className="min-h-screen bg-background">
