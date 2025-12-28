@@ -41,8 +41,8 @@ export default function Booking() {
       </main>
       
       {/* Minimal Footer for Booking Page */}
-      <footer className="relative w-full flex justify-center pointer-events-none overflow-hidden py-12">
-        <span className="font-display text-[8rem] sm:text-[10rem] md:text-[12rem] font-bold leading-none select-none whitespace-nowrap text-foreground/[0.04] animate-pulse">
+      <footer className="relative w-full flex justify-center pointer-events-none overflow-hidden py-12 px-4">
+        <span className="font-display text-[4rem] xs:text-[6rem] sm:text-[12rem] md:text-[16rem] font-bold leading-none select-none whitespace-nowrap text-foreground/[0.04] animate-pulse">
           ZnForge
         </span>
         {/* Fade overlay */}
