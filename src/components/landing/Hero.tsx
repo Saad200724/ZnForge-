@@ -38,32 +38,11 @@ export function Hero() {
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center relative">
-          <div className="absolute top-[15%] left-[-10%] sm:left-[-15%] animate-float-avatar z-20 pointer-events-none">
+          <div className="absolute top-[20%] left-[5%] sm:left-[10%] animate-float-avatar z-20 pointer-events-none">
             <img 
               src="/assets/avatar-cursor.webp" 
               alt="Avatar with cursor" 
-              className="w-24 h-24 sm:w-32 sm:h-32 object-contain drop-shadow-2xl"
-            />
-          </div>
-          <div className="absolute top-[40%] right-[-10%] sm:right-[-15%] animate-float-avatar z-20 pointer-events-none" style={{ animationDelay: '1.5s' }}>
-            <img 
-              src="/assets/avatar-1.png" 
-              alt="Avatar with cursor" 
-              className="w-24 h-24 sm:w-32 sm:h-32 object-contain drop-shadow-2xl"
-            />
-          </div>
-          <div className="absolute bottom-[20%] left-[-8%] sm:left-[-12%] animate-float-avatar z-20 pointer-events-none" style={{ animationDelay: '3s' }}>
-            <img 
-              src="/assets/avatar-2.png" 
-              alt="Avatar with cursor" 
-              className="w-24 h-24 sm:w-32 sm:h-32 object-contain drop-shadow-2xl"
-            />
-          </div>
-          <div className="absolute bottom-[40%] right-[-12%] sm:right-[-18%] animate-float-avatar z-20 pointer-events-none" style={{ animationDelay: '4.5s' }}>
-            <img 
-              src="/assets/avatar-3.png" 
-              alt="Avatar with cursor" 
-              className="w-24 h-24 sm:w-32 sm:h-32 object-contain drop-shadow-2xl"
+              className="w-32 h-32 sm:w-40 sm:h-40 object-contain drop-shadow-2xl"
             />
           </div>
 
