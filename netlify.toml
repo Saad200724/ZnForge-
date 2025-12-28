@@ -1,9 +1,9 @@
 [build]
   publish = "dist"
-  command = "npm install && npm run build"
+  command = "npm run build"
 
 [context.production]
-  environment = { NODE_ENV = "production", NPM_FLAGS = "--include=dev" }
+  environment = { NODE_ENV = "production" }
 
 [[redirects]]
   from = "/*"
