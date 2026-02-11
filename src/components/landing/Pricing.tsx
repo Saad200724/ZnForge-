@@ -56,6 +56,20 @@ const projectPlans: PricingPlan[] = [
     buttonText: "Start Project",
     popular: false,
   },
+  {
+    name: "Custom Enterprise",
+    subtitle: "Bespoke Architecture & Dedicated Support",
+    price: "Quote",
+    previousPrice: null,
+    features: [
+      "Bespoke System Design",
+      "White-label Solutions",
+      "On-site Consultation",
+      "24/7 Priority Support",
+    ],
+    buttonText: "Contact Us",
+    popular: false,
+  },
 ];
 
 export function Pricing() {
@@ -71,7 +85,7 @@ export function Pricing() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto items-stretch px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto items-stretch px-4">
           {projectPlans.map((plan) => (
             <div
               key={plan.name}
